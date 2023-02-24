@@ -70,7 +70,7 @@ git clone git@github.com:synapseslab/android-bluegps-sdk-demoapp.git
 
 and play with it.
 
-## Supported features
+## Examples
 
 - Map navigation and interaction [MapActivity.kt](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/demo-app/app/src/main/java/com/synapseslab/bluegpssdkdemo/map/MapActivity.kt)
 - Search objects [SearchObjectsActivity.kt](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/demo-app/app/src/main/java/com/synapseslab/bluegpssdkdemo/search_object/SearchObjectsActivity.kt)
