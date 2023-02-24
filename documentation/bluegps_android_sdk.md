@@ -82,147 +82,6 @@ BlueGPS Android SDK
 
 <div style="page-break-after: always;"></div>
 
-Changelog
-==
-
-[1.4.0]
-
-**02/20/2023**
-
-- Add function `getFilter()` on [8.6 getFilter](#86-getfilter)
-- Add function `search()` on [8.7 search](#87-search)
-- Add Booking API on [11. Booking API](#11-booking-api)
-  - Add function `getAgendaDay()` on [11.1 getAgendaDay](#111-getagendaday)
-  - Add function `getAgendaMy()` on [11.2 getAgendaMy](#112-getagendamy)
-  - Add function `schedule()` on [11.3 agendaFind](#113-agendafind)
-  - Add function `agendaFind()` on [11.4 schedule](#114-schedule)
-- Add OAuth client for keycloak authentication on [12. OAuth client for keycloak authentication](#12-oauth-client-for-keycloak-authentication)
-- Add notify position changes on [6.3 Notify position changes](#63-notify-position-changes)
-
-[1.3.1]
-
-**02/03/2023**
-- Add function `getAreasList()` on [10.4 getAreasList](#104-getareaslist)
-- Add function `getAreaListRealtimeElement()` on [10.5 getAreaListRealtimeElement](#102-getarealistrealtimeelement)
-
-[1.2.0]
-
-**11/25/2022**
-- Add support for Rooms and Areas on [10. Area API](#10-area-api)
-- Add function `getRoomsCoordinates()` on [10.1 getRoomsCoordinates](#101-getroomscoordinates)
-- Add function `getMapsList()` on [10.2 getMapsList](#102-getmapslist)
-- Add function `getAreasWithTagsInside()` on [10.3 getAreasWithTagsInside](#103-getareaswithtagsinside)
-
-[1.1.3]
-
-**11/11/2022**
-- Add notify region changes on [6.2 Notify region changes](#62-notify-region-changes)
-- Add function `setDarkMode(darkMode: Boolean)` on map view on [5.3.25 setDarkMode](#5325-setdarkmode)
-
-[1.1.1]
-
-**10/27/2022**
-- Add support for Controllable items API on [9. Controllable items API](#9-controllable-items-api)
-- Add function `initAllBookingLayerBy(bookFilter)` on map view on [5.3.24 initAllBookingLayerBy](#5324-initallbookinglayerby)
-
-[1.1.0]
-
-**10/12/2022**
-- Change Blue GPS SDK name from `bluegps_sdk-release-1.0.3.aar` to `bluegps-sdk-release-1.1.0.aar` 
-check the example app (**breakpoint!!**)
-- Update gradle libraries
-- updated target Sdk Version to 33 (Android 13)
-- updated compiled sdk version to 33 (Android 13)
-- Add support for SearchObject on [8. Search object API](#8-search-object-api)
-
-[1.0.3]
-
-**12/01/2021**
-- Changed the name of the BlueGPS_SDK lib to `bluegps_sdk-release-1.0.3`
-- Add new callback `initSDKCompleted` on [5.2. Map Listener](#52-map-listener)
-- Add new network call to `findResources()` on [7. Resources API](#7-resources-api)
-- Changed the home screen example `HomeActivity.kt`
-- Removed deprecated plugin `kotlin-android-extensions` on demo app
-
-[1.0.2-alpha]
-
-**10/29/2021**
-- Add `changeFloor` parameter on [5.3.18 selectPoi](#5318-selectpoi) and on [5.3.19 selectPoiById](#5319-selectpoibyid)
-
-**10/28/2021**
-
-- Add Server Sent Events diagnostic on [6.1 Diagnostic SSE](#61-diagnostic-sse)
-
-**10/25/2021**
-
-- Add function `centerToRoom(roomId)` on map view [5.3.22 centerToRoom](#5322-centertoroom)
-- Add function `centerToPosition(mapPosition, zoom)` on map
-  view [5.3.23 centerToPosition](#5323-centertoposition)
-- Removed callback `roomClick` on [5.2. Map Listener](#52-map-listener)
-
-**10/21/2021**
-
-- `PaylodadResponse` class is deprecated. Use the new `GenericInfo` class
-  for `TypeMapCallback.SUCCESS` and `TypeMapCallback.ERROR` on [5.2. Map Listener](#52-map-listener)
-- Changed the return type of `TypeMapCallback.PARK_CONF` callback from `PaylodResponse`
-  to `BookingConfiguration` on [5.2. Map Listener](#52-map-listener)
-- Removed the callback `TypeMapCallback.INIT_SDK_END` now the init sdk event is managed
-  on `TypeMapCallback.SUCCESS` for success or in `TypeMapCallback.ERROR` otherwise
-  on [5.2. Map Listener](#52-map-listener)
-- Add new callback `roomEnter` on [5.2. Map Listener](#52-map-listener)
-- Add new callback `roomExit` on [5.2. Map Listener](#52-map-listener)
-- Add new callback `floorChange` on [5.2. Map Listener](#52-map-listener)
-
-**10/14/2021**
-
-- Add function `loadGenericResource(search, type, subtype)` on map
-  view [5.3.17 loadGenericResource](#5317-loadgenericresource)
-- Add function `selectPoi(poi)` on map view [5.3.18 selectPoi](#5318-selectpoi)
-- Add function `selectPoiById(poiId)` on map view [5.3.19 selectPoiById](#5319-selectpoibyid)
-- Add function `drawPin(position, icon)` on map view [5.3.20 drawPin](#5320-drawpin)
-- Add function `getCurrentFloor()` on map view [5.3.21 getCurrentFloor](#5321-getcurrentfloor)
-- Add new callback `resource` on [5.2. Map Listener](#52-map-listener)
-- Add new callback `tagVisibility` on [5.2. Map Listener](#52-map-listener)
-
-**10/06/2021**
-
-- updated target Sdk Version to 31 (Android 12)
-- updated compiled sdk version to 31 (Android 12)
-- add `BLUETOOTH_ADVERTISE` and `BLUETOOTH_CONNECT` runtime permissions for Android 12 support
-- removed `androidx.security:security-crypto` library
-  on [2.2. Adding the Library to an existing Android application](#22-adding-the-library-to-an-existing-android-application)
-
-**09/27/2021**
-
-- Add function `removeNavigation()` on map view [5.3.16 removeNavigation](#5316-removenavigation)
-- Add new callback `navigation stats` on [5.2. Map Listener](#52-map-listener)
-- Add new callback `navigation info` on [5.2. Map Listener](#52-map-listener)
-- Add new callback `success` info on [5.2. Map Listener](#52-map-listener)
-- Add new callback `error` info on [5.2. Map Listener](#52-map-listener)
-- Update [5. BlueGPSMapView](#5-bluegpsmapview) section with a configuration for navigation
-
-**08/30/2021**
-
-- Add show park and desk on conf object
-- Update the Path model
-- Update the callback from web view click (room click, map click, tag click)
-- Add new method on MapView SDK (getStyle(), setStyle(), setStartBookingDate(), setBookingDate())
-
-**07/01/2021**
-
-- Add Map Web View Component
-- Change initSDK method
-- Add map view interaction
-
-**05/18/2021**
-
-- SDK Init
-- Guest Authentication
-- JWT Authentication
-- Advertising
-
-<div style="page-break-after: always;"></div>
-
 # 1. Introduction
 
 This document holds a general guide for the integration of the BlueGPS SDK library into an Android
@@ -257,43 +116,36 @@ Minimum requirements are:
 
 ## 2.2. Adding the Library to an existing Android application
 
-To use the BlueGPS SDK the developer have to add the `bluegps_sdk-release.X.Y.Z.aar` inside
-application libs folder and reference it. The `libs` folder is usually placed inside the app folder
-of the project beside its `src` folder.
+Before you add BlueGPS depencencies, update your repositories in the `settings.gradle` file to include these two repositories
 
-BlueGPS SDK is provide with an demo app called `BlueGPSSDKDemo`. The main application is stored
-inside the folder app:
+```gradle
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://maven.pkg.github.com/synapseslab/android-bluegps-sdk" }
+    }
+}
+```
 
-<img src="images/project_dir.png" alt="Project structure" width="600"/>
-
-To enable the SDK the developer have to add the following lines to the root of the project. The
-following snippet needs to be included in the top level `build.gradle` file:
+Or if you're using an older project setup, add these repositories  in your project level `build.gradle` file:
 
 ```gradle
 allprojects {
     repositories {
         google()
         mavenCentral()
-        flatDir {
-            dirs 'libs'
-        }
+        maven { url "https://maven.pkg.github.com/synapseslab/android-bluegps-sdk" }
     }
 }
 ```
 
-Developer have to add the following lines to the `app/build.gradle` file (changing X, Y and Z to
-match the provided file) to integrate the library and Kotlin Coroutines, OkHttp and Retrofit
-libraries which are used by BlueGPSSDK :
+Then add the dependency for BlueGPS-SDK in the `build.gradle` file for your app or module:
 
 ```gradle
 dependencies {
-    implementation name: 'bluegps_sdk-release-X.Y.Z', ext: 'aar'
-
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1'
-    implementation 'androidx.security:security-crypto:1.1.0-alpha03'
+    implementation 'com.synapseslab:android-bluegps-sdk:X.Y.Z'
 }
 ```
 
