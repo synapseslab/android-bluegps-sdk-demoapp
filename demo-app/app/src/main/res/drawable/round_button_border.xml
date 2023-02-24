@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2022 Synapses s.r.l.s. All rights reserved.
+  ~ https://synapseslab.com/
+  -->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#FF607ff2" />
+    <corners android:bottomRightRadius="4dp"
+        android:bottomLeftRadius="4dp"
+        android:topRightRadius="4dp"
+        android:topLeftRadius="4dp"/>
+</shape>
