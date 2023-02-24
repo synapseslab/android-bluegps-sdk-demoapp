@@ -3,7 +3,7 @@ Official Android Demo App showcases the BlueGPS SDK features and acts as referen
 Getting started requires you setup a **license**.
 
 
-## Installation and Getting Started
+## Installation
 
 Before you add BlueGPS depencencies, update your repositories in the `settings.gradle` file to include these two repositories
 
@@ -38,6 +38,26 @@ dependencies {
 }
 ```
 
+## Getting Started
+
+Your first step is initializing the BlueGPSLib, which is the main entry point for all operations in the library. BlueGPSLib is a singleton: you'll create it once and re-use it across your application.
+
+A best practice is to initialize BlueGPSLib in the Application class:
+
+```kotlin
+class App : Application() {
+    override fun onCreate() {
+        super.onCreate()
+        
+        BlueGPSLib.instance.initSDK(
+            sdkEnvironment = Environment.sdkEnvironment,
+            context = applicationContext,
+            enabledNetworkLogs = true
+        )
+    }
+}
+```
+
 ## Sample App
 
 To run the sample app, start by cloning this repo:
@@ -45,6 +65,8 @@ To run the sample app, start by cloning this repo:
  ```shell
 git clone git@github.com:synapseslab/android-bluegps-sdk-demoapp.git
 ```
+
+and play with it.
 
 ## Supported features
 
