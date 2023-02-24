@@ -89,9 +89,8 @@ BlueGPSSDK provides some built-in capabilities to search for resources and objec
 - [Search objects](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/demo-app/app/src/main/java/com/synapseslab/bluegpssdkdemo/search_object/SearchObjectsActivity.kt) - [(documentation)](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/documentation/bluegps_android_sdk.md#8-search-object-api)
 
 #### Controllable items API
-BlueGPSSDK provides a logic to interact with controllable items exposed by the backend.
+BlueGPSSDK provides a logic to interact with controllable items exposed by the backend. Controllable items could be anything that can be remote controlled by the application.
 
-Controllable items could be anything that can be remote controlled by the application.
 - [IOT Controllable elements](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/demo-app/app/src/main/java/com/synapseslab/bluegpssdkdemo/controllable_elements/ControllableElementsActivity.kt) - [(documentation)](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/documentation/bluegps_android_sdk.md#9-controllable-items-api)
 
 #### Area API
@@ -116,6 +115,7 @@ The purpose of diagnostic API is to give an indication to the integrator of the 
 [https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/CHANGELOG.md](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/CHANGELOG.md)
 
 ## Documentation
+Let's see how you can get started with the Android BlueGPS SDK after adding the required dependencies.
 
 [https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/documentation/bluegps_android_sdk.md](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/documentation/bluegps_android_sdk.md)
 
