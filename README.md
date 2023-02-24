@@ -85,3 +85,11 @@ and play with it.
 
 [https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/CHANGELOG.md](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/CHANGELOG.md)
 
+## License
+
+```
+Copyright (c) 2020-2023 Synapses S.r.l.s. All rights reserved.
+
+Licensed under......
+
+```
