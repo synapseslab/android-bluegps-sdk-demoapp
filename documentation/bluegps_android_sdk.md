@@ -91,16 +91,6 @@ Applications to make use of the system.
 *All the data contained in this document are currently under development and may be subject to
 change.*
 
-The library use:
-
-- [Kotlin](https://kotlinlang.org/) - First class and official programming language for Android
-  development.
-- [Coroutines](https://kotlinlang.org/docs/coroutines-guide.html) - A coroutine is a concurrency
-  design pattern that you can use on Android to simplify code that executes asynchronously.
-- [Retrofit](https://github.com/square/retrofit) - A type-safe HTTP client for Android and Java.
-- [Encrypted SharedPreference](https://developer.android.com/topic/security/data) Used to store
-  key-value data using encryption.
-
 <br />
 
 # 2. Integration guide
