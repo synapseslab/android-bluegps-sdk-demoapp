@@ -1657,7 +1657,7 @@ where
 
 The resulting **ResponseMessage** contains a `DaySchedule` as follow:
 
-```koltin
+```kotlin
 data class DaySchedule(
     /**
      * unique id
