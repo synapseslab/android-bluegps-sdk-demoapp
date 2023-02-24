@@ -3,15 +3,15 @@
 ### 🐞 Fixed
 ### ⬆️ Improved
 ### ✅ Added
-- Add function `getFilter()`
-- Add function `search()`
+- Add function `getFilter()` [documentation](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/documentation/bluegps_android_sdk.md#86-getfilter)
+- Add function `search()` [documentation](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/documentation/bluegps_android_sdk.md#87-search)
 - Add Booking API
-  - Add function `getAgendaDay()`
-  - Add function `getAgendaMy()`
-  - Add function `schedule()`
-  - Add function `agendaFind()`
-- Add OAuth client for keycloak authentication
-- Add notify position changes
+  - Add function `getAgendaDay()` [documentation](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/documentation/bluegps_android_sdk.md#111-getagendaday)
+  - Add function `getAgendaMy()` [documentation](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/documentation/bluegps_android_sdk.md#112-getagendamy)
+  - Add function `schedule()` [documentation](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/documentation/bluegps_android_sdk.md#114-schedule)
+  - Add function `agendaFind()` [documentation](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/documentation/bluegps_android_sdk.md#113-agendafind)
+- Add OAuth client for keycloak authentication [documentation](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/documentation/bluegps_android_sdk.md#12-oauth-client-for-keycloak-authentication)
+- Add notify position changes [documentation](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/documentation/bluegps_android_sdk.md#63-notify-position-changes)
 ### ⚠️ Changed
 
 
