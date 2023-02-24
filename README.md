@@ -112,12 +112,12 @@ The purpose of diagnostic API is to give an indication to the integrator of the 
 
 ## SDK Changelog
 
-[https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/CHANGELOG.md](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/CHANGELOG.md)
+[Changelog link](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/CHANGELOG.md)
 
 ## Documentation
 Let's see how you can get started with the Android BlueGPS SDK after adding the required dependencies.
 
-[https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/documentation/bluegps_android_sdk.md](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/documentation/bluegps_android_sdk.md)
+[Documentation link](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/documentation/bluegps_android_sdk.md)
 
 
 ## License
