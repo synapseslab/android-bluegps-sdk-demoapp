@@ -58,6 +58,8 @@ class App : Application() {
 }
 ```
 
+The BlueGSP-SDK use an `Environment` where integrator have to put SDK data for register the SDK and for create a communication with the BlueGPS Server (see the demo app for detail). The management of the environment is demanded to the app.
+
 ## Sample App
 
 To run the sample app, start by cloning this repo:
