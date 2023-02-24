@@ -80,3 +80,8 @@ and play with it.
 - SSE Notify region changes
 - SSE Notify position changes
 - SSE Diagnostic Tag
+
+## SDK Changelog
+
+[https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/CHANGELOG.md](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/CHANGELOG.md)
+
