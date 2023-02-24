@@ -1,4 +1,4 @@
-# February 20rd, 2023 - 1.4.0
+# February 20, 2023 - 1.4.0
 ## android-bluegps-sdk
 ### 🐞 Fixed
 ### ⬆️ Improved
@@ -14,8 +14,113 @@
 - Add notify position changes
 ### ⚠️ Changed
 
-# February 02rd, 2023 - 1.3.1
+
+# February 02, 2023 - 1.3.1
 ## android-bluegps-sdk
 ### ✅ Added
 - Add function `getAreasList()`
 - Add function `getAreaListRealtimeElement()`
+
+
+# November 25, 2022 - 1.2.0
+## android-bluegps-sdk
+### ✅ Added
+- Add support for Rooms and Areas
+- Add function `getRoomsCoordinates()`
+- Add function `getMapsList()`
+- Add function `getAreasWithTagsInside()`
+
+
+# November 11, 2022 - 1.1.3
+## android-bluegps-sdk
+### ✅ Added
+- Add notify region changes
+- Add function `setDarkMode(darkMode: Boolean)`
+
+# October 27, 2022 - 1.1.1
+## android-bluegps-sdk
+### ✅ Added
+- Add support for Controllable items API
+- Add function `initAllBookingLayerBy(bookFilter)`
+
+
+# October 12, 2022 - 1.1.0
+## android-bluegps-sdk
+### ✅ Added
+- Change Blue GPS SDK name from `bluegps_sdk-release-1.0.3.aar` to `bluegps-sdk-release-1.1.0.aar` 
+check the example app (**breakpoint!!**)
+- Update gradle libraries
+- updated target Sdk Version to 33 (Android 13)
+- updated compiled sdk version to 33 (Android 13)
+- Add support for SearchObject
+
+
+# December 01, 2021 - 1.0.3
+## android-bluegps-sdk
+### ✅ Added
+- Changed the name of the BlueGPS_SDK lib to `bluegps_sdk-release-1.0.3`
+- Add new callback `initSDKCompleted`
+- Add new network call to `findResources()`
+
+### ⚠️ Changed
+- Changed the home screen example `HomeActivity.kt`
+- Removed deprecated plugin `kotlin-android-extensions` on demo app
+
+
+# October 29, 2021 - 1.0.2-alpha
+## android-bluegps-sdk
+### ✅ Added
+- Add `changeFloor` parameter
+- Add Server Sent Events diagnostic
+- Add function `centerToRoom(roomId)`
+- Add function `centerToPosition(mapPosition, zoom)`
+- Add new callback `roomEnter` 
+- Add new callback `roomExit` 
+- Add new callback `floorChange`
+### ⚠️ Changed
+- Removed callback `roomClick`
+- `PaylodadResponse` class is deprecated. Use the new `GenericInfo` class
+  for `TypeMapCallback.SUCCESS` and `TypeMapCallback.ERROR`
+- Changed the return type of `TypeMapCallback.PARK_CONF` callback from `PaylodResponse`
+  to `BookingConfiguration`
+- Removed the callback `TypeMapCallback.INIT_SDK_END` now the init sdk event is managed
+  on `TypeMapCallback.SUCCESS` for success or in `TypeMapCallback.ERROR` otherwise
+
+
+# October 14, 2021 - 1.0.1
+## android-bluegps-sdk
+### ✅ Added
+- Add function `loadGenericResource(search, type, subtype)`
+- Add function `selectPoi(poi)`
+- Add function `selectPoiById(poiId)`
+- Add function `drawPin(position, icon)` 
+- Add function `getCurrentFloor()`
+- Add new callback `resource` 
+- Add new callback `tagVisibility`
+
+
+# October 16, 2021 - 1.0.0
+## android-bluegps-sdk
+### ✅ Added
+- updated target Sdk Version to 31 (Android 12)
+- updated compiled sdk version to 31 (Android 12)
+- add `BLUETOOTH_ADVERTISE` and `BLUETOOTH_CONNECT` runtime permissions for Android 12 support
+- Add function `removeNavigation()` 
+- Add new callback `navigation stats`
+- Add new callback `navigation info`
+- Add new callback `success` info 
+- Add new callback `error` info
+- Add show park and desk on conf object
+- Add new method on MapView SDK (getStyle(), setStyle(), setStartBookingDate(), setBookingDate())
+- Add Map Web View Component
+- Add map view interaction
+- SDK Init
+- Guest Authentication
+- JWT Authentication
+- Advertising
+### ⚠️ Changed
+- removed `androidx.security:security-crypto` library
+- Update [5. BlueGPSMapView](#5-bluegpsmapview) section with a configuration for navigation
+- Update the Path model
+- Update the callback from web view click (room click, map click, tag click)
+- Change initSDK method
