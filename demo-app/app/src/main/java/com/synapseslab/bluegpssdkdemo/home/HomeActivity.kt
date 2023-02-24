@@ -31,6 +31,7 @@ import com.synapseslab.bluegpssdkdemo.R
 import com.synapseslab.bluegpssdkdemo.BuildConfig
 import com.synapseslab.bluegpssdkdemo.area.AreaActivity
 import com.synapseslab.bluegpssdkdemo.databinding.ActivityHomeBinding
+import com.synapseslab.bluegpssdkdemo.keycloak.KeycloakActivity
 import com.synapseslab.bluegpssdkdemo.login.MainActivity
 import com.synapseslab.bluegpssdkdemo.map.MapActivity
 import com.synapseslab.bluegpssdkdemo.navigation.NavigationActivity
@@ -193,6 +194,11 @@ class HomeActivity : AppCompatActivity() {
                 title = "Login view",
                 icon = R.drawable.ic_login,
                 cls = MainActivity::class.java
+            ),
+            ViewActivity(
+                title = "Keycloak Login",
+                icon = R.drawable.ic_lock,
+                cls = KeycloakActivity::class.java
             ),
             ViewActivity(
                 title = "Map View",

@@ -42,6 +42,9 @@
         <activity android:name=".map.MapActivity" />
         <activity android:name=".map.ResourceActivity" />
         <activity
+            android:name=".keycloak.KeycloakActivity"
+            android:exported="false" />
+        <activity
             android:name=".home.HomeActivity"
             android:exported="true">
             <intent-filter>

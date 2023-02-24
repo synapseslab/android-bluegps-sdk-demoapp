@@ -55,4 +55,8 @@
     <string name="groups">Groups</string>
     <string name="description">Description</string>
     <string name="type">Type</string>
+    <string name="logout">Logout</string>
+    <string name="refresh">Refresh</string>
+    <string name="successfully_logged_in">Successfully logged in</string>
+    <string name="guest_login">Guest Login</string>
 </resources>
