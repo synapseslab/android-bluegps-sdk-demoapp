@@ -91,7 +91,6 @@ Applications to make use of the system.
 *All the data contained in this document are currently under development and may be subject to
 change.*
 
-<br />
 
 # 2. Integration guide
 
