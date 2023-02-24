@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ (c) Copyright 2021. All rights reserved by Synapses S.r.l.s.
+  ~ https://www.synapseslab.com/
+  ~
+  ~ Created by Davide Agostini on 29/06/21, 10:13.
+  ~ Last modified 29/06/21, 10:13
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/ic_baseline_settings_24"
+        app:showAsAction="always"
+        android:iconTint="@color/white"
+        android:title="@string/settings" />
+</menu>

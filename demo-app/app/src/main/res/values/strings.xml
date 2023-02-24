@@ -1,0 +1,58 @@
+<!--
+  ~ (c) Copyright 2021. All rights reserved by Synapses S.r.l.s.
+  ~ https://www.synapseslab.com/
+  ~
+  ~ Created by Davide Agostini on 5/12/21 10:13 AM.
+  ~ Last modified 5/12/21 10:13 AM
+  -->
+
+<resources>
+    <string name="app_name">BlueGPS-SampleApp</string>
+    <string name="guest_authentication">Guest Authentication</string>
+    <string name="sdk_key">Sdk Key</string>
+    <string name="sdk_secret">Sdk Secret</string>
+    <string name="start_service">Start Service</string>
+    <string name="stop_service">Stop Service</string>
+    <string name="jwt_authentication">JWT Authentication</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="login">Login</string>
+    <string name="loading">Loading</string>
+    <string name="map_control_orientation">Map control orientation:</string>
+    <string name="map_control">Map control:</string>
+    <string name="hor">HOR</string>
+    <string name="ver">VER</string>
+    <string name="button_width">Button width:</string>
+    <string name="button_height">Button height:</string>
+    <string name="layer_control">Layer control:</string>
+    <string name="reset_view">Reset view</string>
+    <string name="hide_room">Hide room</string>
+    <string name="next_floor">Next floor</string>
+    <string name="show_layer">Show layer</string>
+    <string name="hide_layer">Hide layer</string>
+    <string name="settings">Settings</string>
+    <string name="get_floor">Get floor</string>
+    <string name="load_resource">Load resource</string>
+    <string name="current_floor">Current floor</string>
+    <string name="login_view">Login view</string>
+    <string name="map_view">Map view</string>
+    <string name="navigation_mode">Navigation mode</string>
+    <string name="go">go</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="search_resources">Search resources</string>
+    <string name="menu_filter">Filter</string>
+    <string name="menu_clear">Clear completed</string>
+    <string name="menu_search">Search</string>
+    <string name="menu_refresh">Refresh</string>
+    <string name="no_element_for_the_search_criteria">No element for the search criteria</string>
+    <string name="increasing">Increasing</string>
+    <string name="decreasing">Decreasing</string>
+    <string name="from">From: </string>
+    <string name="to">To: </string>
+    <string name="navigate">Navigate</string>
+    <string name="show_on_map">Show on map</string>
+    <string name="groups">Groups</string>
+    <string name="description">Description</string>
+    <string name="type">Type</string>
+</resources>

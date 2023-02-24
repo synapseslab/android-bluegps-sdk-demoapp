@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ (c) Copyright 2021. All rights reserved by Synapses S.r.l.s.
+  ~ https://www.synapseslab.com/
+  ~
+  ~ Created by Davide Agostini on 5/12/21 2:31 PM.
+  ~ Last modified 5/12/21 2:31 PM
+  -->
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#F2F6FA" />
+            <corners android:radius="10dp" />
+        </shape>
+    </item>
+    <item android:right="0.5dp" android:left="0.5dp" android:top="0.5dp" android:bottom="0.5dp">
+        <shape android:shape="rectangle" >
+            <solid android:color="#F2F6FA" />
+            <corners android:radius="10dp" />
+        </shape>
+    </item>
+</layer-list>

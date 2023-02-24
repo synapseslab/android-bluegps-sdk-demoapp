@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ (c) Copyright 2021. All rights reserved by Synapses S.r.l.s.
+  ~ https://www.synapseslab.com/
+  ~
+  ~ Created by Davide Agostini on 02/12/21, 11:03.
+  ~ Last modified 02/12/21, 11:03
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/group"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/increasing"
+            android:checked="true"
+            android:title="@string/increasing" />
+        <item
+            android:id="@+id/decreasing"
+            android:title="@string/decreasing" />
+    </group>
+
+</menu>

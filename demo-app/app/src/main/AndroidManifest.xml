@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.synapseslab.bluegpssdkdemo">
+
+    <application
+        android:name=".DemoApplication"
+        android:fullBackupOnly="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DemoSDK">
+
+        <activity
+            android:name=".area.AreaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".sse.NotifyPositionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".sse.NotifyRegionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".sse.DiagnosticTagActivity"
+            android:exported="false" />
+        <activity
+            android:name=".navigation.NavigationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".resources.SearchResourcesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".resources.ShowResourceOnMapActivity"
+            android:exported="false" />
+        <activity
+            android:name=".search_object.SearchObjectsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".search_object.ObjectDetailActivity"
+            android:exported="false" />
+        <activity android:name=".login.MainActivity" />
+        <activity android:name=".map.MapActivity" />
+        <activity android:name=".map.ResourceActivity" />
+        <activity
+            android:name=".home.HomeActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

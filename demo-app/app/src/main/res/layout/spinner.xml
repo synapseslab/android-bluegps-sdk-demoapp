@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ (c) Copyright 2021. All rights reserved by Synapses S.r.l.s.
+  ~ https://www.synapseslab.com/
+  ~
+  ~ Created by Davide Agostini on 03/12/21, 13:54.
+  ~ Last modified 03/12/21, 13:54
+  -->
+
+<TextView android:id="@+id/tvName"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:text="Item"
+    android:gravity="start"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:minHeight="?android:attr/listPreferredItemHeightSmall"
+    android:textAppearance="?android:attr/textAppearanceListItemSmall"
+    xmlns:tools="http://schemas.android.com/tools" />
