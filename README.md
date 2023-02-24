@@ -72,14 +72,14 @@ and play with it.
 
 ## Supported features
 
-- Map navigation and interaction
-- Search objects
+- Map navigation and interaction [MapActivity.kt](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/demo-app/app/src/main/java/com/synapseslab/bluegpssdkdemo/map/MapActivity.kt)
+- Search objects [SearchObjectsActivity.kt](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/demo-app/app/src/main/java/com/synapseslab/bluegpssdkdemo/search_object/SearchObjectsActivity.kt)
 - IOT Controllable elements
-- JWT Login
+- JWT Login [LoginActivity.kt](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/demo-app/app/src/main/java/com/synapseslab/bluegpssdkdemo/login/MainActivity.kt)
 - Keycloak Authentication
-- SSE Notify region changes
-- SSE Notify position changes
-- SSE Diagnostic Tag
+- SSE Notify region changes [NotifyRegionActivity.kt](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/demo-app/app/src/main/java/com/synapseslab/bluegpssdkdemo/sse/NotifyRegionActivity.kt)
+- SSE Notify position changes [NotifyPositionActivity.kt](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/demo-app/app/src/main/java/com/synapseslab/bluegpssdkdemo/sse/NotifyPositionActivity.kt)
+- SSE Diagnostic Tag [DiagnosticTagActivity.kt](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/demo-app/app/src/main/java/com/synapseslab/bluegpssdkdemo/sse/DiagnosticTagActivity.kt)
 
 ## SDK Changelog
 
