@@ -1258,14 +1258,14 @@ data class Filter(
     val search: String? = null,
 
     /**
-     * Possible resource, all resource in cas of empty
+     * Possible resource, all resource in case of empty
      */
-    val resource_type: List<ResourceType>? = null,
+    val resourceTypes: List<ResourceType>? = null,
 
     /**
      * a boolean indicate if is a favourite
      */
-    val favourite: Boolean? = null,
+    val favourite: Boolean? = false,
 
     /**
      * a list of [FilterElement]
@@ -1325,7 +1325,7 @@ data class GenericResource(
     /**
      * the resource type [ResourceType]
      */
-    val type: ResourceType? = null,
+    val type: ResourceType,
 
     val i18n: String? = null,
 
@@ -1334,21 +1334,26 @@ data class GenericResource(
     /**
      * image url (if start with http/s the url is absolute, relative otherwise)
      */
-    val image: List<String>? = null,
+    val image: String? = null,
+
+    /**
+     * image url (if start with http/s the url is absolute, relative otherwise)
+     */
+    val images: List<String>? = null,
 
     val icon: IconResourceFilter? = null,
 
-    val position: Position? = null,
-
     val buildingPosition: BuildingPosition? = null,
 
-    val bookableResource: Boolean? = null,
+    val position: Position? = null,
 
     val bookingConfig: BookingConfig? = null,
 
+    val bookableResource: Boolean? = null,
+
     val services: List<ResourceService>? = null,
 
-    //val controls: List<>
+    val controls: List<Control>? = null,
 )
 ```
 
@@ -1644,15 +1649,15 @@ BlueGPS_SDK provides some built-in capabilities for booking.
 ```kotlin
 suspend fun getAgendaDay(
     id: String,
-    type: String,
     date: String,
+    scheduleTypes: List<ScheduleType>,
 ): Resource<DaySchedule> 
 ```
 
 where
 
 - `id` the id of the element to be find the day schedule
-- `type` the type of the element to be find the day schedule
+- `tscheduleTypesype` the type of the element to be find the day schedule
 - `date` Example: "2022-01-22"
 
 The resulting **ResponseMessage** contains a `DaySchedule` as follow:
@@ -1672,17 +1677,17 @@ data class DaySchedule(
     /**
      * example: 08:00
      */
-    val dayStart: String,
+    val dayStart: String? = null,
 
     /**
      * example: 18:00
      */
-    val dayEnd: String,
+    val dayEnd: String? = null,
 
     /**
      * the list of elements [ScheduleElement]
      */
-    val scheduleElements: List<ScheduleElement>
+    val scheduleElements: List<ScheduleElement>? = null
 )
 ```
 
@@ -1712,7 +1717,7 @@ The resulting **ResponseMessage** contains a `DaySchedule`.
 ```kotlin
 suspend fun agendaFind(
     resourceAgendaRequest: ResourceAgendaRequest
-): Resource<ResourceAgendaResponse> {}
+): Resource<ResourceAgenda> {}
 ```
 
 where
@@ -1738,16 +1743,16 @@ data class ResourceAgendaRequest(
 The resulting **ResponseMessage** contains a `DaySchedule`. 
 
 ```kotlin
-data class ResourceAgendaResponse(
+data class ResourceAgenda(
     /**
      * unique id
      */
-    val id: String? = null,
+    val id: String,
 
     /**
      * the resource searched
      */
-    val resource: GenericResource? = null,
+    val element: GenericResource,
 
     /**
      * example: 2023-01-21
@@ -1779,12 +1784,14 @@ where
 - `scheduleRequest` [ScheduleRequest] is
 
 ```kotlin
-data class ScheduleRequest(
-
+data class ScheduleRequest( 
     /**
      * the id of the element to schedule
      */
-    val elementId: String? = null,
+    val elementId: String,
+
+
+    val elementType: ResourceType,
 
     /**
      * an optional name for the meeting
@@ -1799,12 +1806,12 @@ data class ScheduleRequest(
     /**
      * a boolean to indicate if is a video conference
      */
-    val videoConference: Boolean? = null,
+    val videoConference: Boolean? = false,
 
     /**
      * example: 2023-01-21
      */
-    val dayStart: String? = null,
+    val dayStart: String,
 
     /**
      * example: 2023-01-21
