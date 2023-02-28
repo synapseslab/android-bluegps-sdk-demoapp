@@ -63,9 +63,9 @@ The BlueGSP-SDK use an `Environment` where integrator have to put SDK data for r
 ```kotlin
 object Environment {
 
-    private val SDK_ENDPOINT = "{{bluegps-provided-endpoint}}"
-    private val SDK_KEY = "{{sdk-provided-key}}"
-    private val SDK_SECRET = "{{sdk-provided-secret}}"
+    private val SDK_ENDPOINT = "{{provided-bluegps-endpoint}}"
+    private val SDK_KEY = "{{provided-sdk-key}}"
+    private val SDK_SECRET = "{{provided-sdk-secret}}"
     private val APP_ID = "com.synapseslab.demosdk"
 
     val sdkEnvironment = SdkEnvironment(
