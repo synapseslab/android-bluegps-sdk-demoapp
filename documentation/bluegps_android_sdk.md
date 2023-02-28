@@ -1279,7 +1279,7 @@ data class Filter(
 **search** Search a generic resource
 
 ```kotlin
-suspend fun search(filter: Filter): Resource<GenericResource> {}
+suspend fun search(filter: Filter): Resource<List<GenericResource>> {}
 ```
 
 where `filter` is
@@ -1308,7 +1308,7 @@ data class Filter(
 )
 ```
 
-The resulting **ResponseMessage** contains a `GenericResource` as follow:
+The resulting **ResponseMessage** contains a `List<GenericResource>` as follow:
 
 ```kotlin
 data class GenericResource(
@@ -1699,7 +1699,7 @@ data class DaySchedule(
 suspend fun getAgendaMy(
     dateStart: String? = null,
     dateEnd: String? = null,
-): Resource<DaySchedule> {}
+): Response<List<DaySchedule>> {}
 ```
 
 where
@@ -1707,7 +1707,7 @@ where
 - `dateStart` Example : 2022-01-22
 - `dateEnd` Example : 2022-01-22
 
-The resulting **ResponseMessage** contains a `DaySchedule`.
+The resulting **ResponseMessage** contains a `List<DaySchedule>`.
 
 
 ### 11.3 **agendaFind** 
@@ -1717,7 +1717,7 @@ The resulting **ResponseMessage** contains a `DaySchedule`.
 ```kotlin
 suspend fun agendaFind(
     resourceAgendaRequest: ResourceAgendaRequest
-): Resource<ResourceAgenda> {}
+): Response<List<ResourceAgenda>> {}
 ```
 
 where
@@ -1740,7 +1740,7 @@ data class ResourceAgendaRequest(
 )
 ```
 
-The resulting **ResponseMessage** contains a `DaySchedule`. 
+The resulting **ResponseMessage** contains a `List<ResourceAgenda>`. 
 
 ```kotlin
 data class ResourceAgenda(
