@@ -60,6 +60,24 @@ class App : Application() {
 
 The BlueGSP-SDK use an `Environment` where integrator have to put SDK data for register the SDK and for create a communication with the BlueGPS Server [see the demo app for detail](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/demo-app/app/src/main/java/com/synapseslab/bluegpssdkdemo/utils/Environment.kt). The management of the environment is demanded to the app.
 
+```kotlin
+object Environment {
+
+    private val SDK_ENDPOINT = "{{bluegps-provided-endpoint}}"
+    private val SDK_KEY = "{{sdk-provided-key}}"
+    private val SDK_SECRET = "{{sdk-provided-secret}}"
+    private val APP_ID = "com.synapseslab.demosdk"
+
+    val sdkEnvironment = SdkEnvironment(
+        sdkEndpoint = SDK_ENDPOINT,
+        appId = APP_ID,
+        sdkKey = SDK_KEY,
+        sdkSecret = SDK_SECRET,
+    )
+}
+```
+```
+
 ## Sample App
 
 To run the sample app, start by cloning this repo:
