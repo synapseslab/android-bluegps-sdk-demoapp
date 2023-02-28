@@ -13,7 +13,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven { url "https://maven.pkg.github.com/synapseslab/android-bluegps-sdk" }
+        maven { url "https://maven.pkg.github.com/synapseslab/android-bluegps-sdk-demoapp" }
     }
 }
 ```
@@ -25,7 +25,7 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        maven { url "https://maven.pkg.github.com/synapseslab/android-bluegps-sdk" }
+        maven { url "https://maven.pkg.github.com/synapseslab/android-bluegps-sdk-demoapp" }
     }
 }
 ```
