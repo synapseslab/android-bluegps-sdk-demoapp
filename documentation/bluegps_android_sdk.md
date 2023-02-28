@@ -193,18 +193,12 @@ object Environment {
         appId = APP_ID,
         sdkKey = SDK_KEY,
         sdkSecret = SDK_SECRET,
-        
-        /*loggedUser = SdkEnvironmentLoggedUser(
-            "chorus@synapseslab.com",
-            "dWA63UvCf6",
-            token = "SET_YOUR_TOKEN"
-        )*/
     )
 
 
     // TODO: For JWT Authentication, this credentials are for demo purpose.
-    const val USERNAME = "chorus@synapseslab.com"
-    const val PASSWORD = "dWA63UvCf6"
+    const val USERNAME = ""
+    const val PASSWORD = ""
 
 }
 ```
