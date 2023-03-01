@@ -13,6 +13,7 @@
 - Add OAuth client for keycloak authentication [documentation](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/documentation/bluegps_android_sdk.md#12-oauth-client-for-keycloak-authentication)
 - Add notify position changes [documentation](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/documentation/bluegps_android_sdk.md#63-notify-position-changes)
 ### ⚠️ Changed
+- Add `tagid` attribute to `BGPGpsPosition` class
 
 
 # February 02, 2023 - 1.3.1
