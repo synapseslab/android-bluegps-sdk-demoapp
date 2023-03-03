@@ -1270,7 +1270,7 @@ data class Filter(
 **search** Search a generic resource
 
 ```kotlin
-suspend fun search(filter: Filter): Resource<List<GenericResource>> {}
+suspend fun search(filter: Filter): Resource<List<Resource>> {}
 ```
 
 where `filter` is
@@ -1299,10 +1299,10 @@ data class Filter(
 )
 ```
 
-The resulting **ResponseMessage** contains a `List<GenericResource>` as follow:
+The resulting **ResponseMessage** contains a `List<Resource>` as follow:
 
 ```kotlin
-data class GenericResource(
+data class Resource(
     /**
      * unique id
      */
@@ -1320,8 +1320,6 @@ data class GenericResource(
 
     val i18n: String? = null,
 
-    val subType: String? = null,
-
     /**
      * image url (if start with http/s the url is absolute, relative otherwise)
      */
@@ -1332,15 +1330,11 @@ data class GenericResource(
      */
     val images: List<String>? = null,
 
-    val icon: IconResourceFilter? = null,
-
     val buildingPosition: BuildingPosition? = null,
 
     val position: Position? = null,
 
     val bookingConfig: BookingConfig? = null,
-
-    val bookableResource: Boolean? = null,
 
     val services: List<ResourceService>? = null,
 
@@ -1717,7 +1711,7 @@ where
 
 ```kotlin
 data class ResourceAgendaRequest(
-    val elements: List<GenericResource>,
+    val elements: List<Resource>,
 
     /**
      * example: 2023-01-21
@@ -1743,7 +1737,7 @@ data class ResourceAgenda(
     /**
      * the resource searched
      */
-    val element: GenericResource,
+    val element: Resource,
 
     /**
      * example: 2023-01-21
