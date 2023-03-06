@@ -139,9 +139,4 @@ Let's see how you can get started with the Android BlueGPS SDK after adding the 
 
 ## License
 
-```
-Copyright (c) 2020-2023 Synapses S.r.l.s. All rights reserved.
-
-Licensed under......
-
-```
+[LICENSE](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/LICENSE.md)
