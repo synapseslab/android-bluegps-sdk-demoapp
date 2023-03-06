@@ -1,4 +1,4 @@
-# February 20, 2023 - 1.4.0
+# February 20, 2023 - 1.4.0-alpha05
 ## android-bluegps-sdk
 ### 🐞 Fixed
 ### ⬆️ Improved
