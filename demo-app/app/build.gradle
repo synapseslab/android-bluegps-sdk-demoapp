@@ -49,10 +49,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
     /** BLUEGPS SDK **/
-    implementation 'com.synapseslab:android-bluegps-sdk:1.4.1'
-    //implementation 'com.synapseslab:android-bluegps-sdk-location:1.0.1'
-    //implementation "com.pointrlabs:pointr:7.0.0"
-
-
-
+    implementation 'com.synapseslab:android-bluegps-sdk:1.4.0-alpha05'
 }
