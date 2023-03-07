@@ -9,8 +9,6 @@
 
 # February 20, 2023 - 1.4.0-alpha05
 ## android-bluegps-sdk
-### 🐞 Fixed
-### ⬆️ Improved
 ### ✅ Added
 - Add function `getFilter()` [documentation](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/documentation/bluegps_android_sdk.md#86-getfilter)
 - Add function `search()` [documentation](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/documentation/bluegps_android_sdk.md#87-search)
