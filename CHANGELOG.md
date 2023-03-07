@@ -1,3 +1,12 @@
+# March 7, 2023 - 1.4.1
+## android-bluegps-sdk
+### 🐞 Fixed
+### ⬆️ Improved
+### ✅ Added
+- Add `BlueGPSLocationManager` to start and stop the system location services.
+### ⚠️ Changed
+- Changed `floorLevel` and `floorLevelPercentageConfidence` to optional attributes.
+
 # February 20, 2023 - 1.4.0-alpha05
 ## android-bluegps-sdk
 ### 🐞 Fixed
