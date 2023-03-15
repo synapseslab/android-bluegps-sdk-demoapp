@@ -17,9 +17,6 @@ allprojects {
         google()
         mavenCentral()
         jcenter()
-        maven {
-            url = "https://maven.pkg.github.com/synapseslab/android-bluegps-sdk-demoapp"
-        }
     }
 }
 
