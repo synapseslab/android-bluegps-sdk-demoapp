@@ -19,10 +19,6 @@ allprojects {
         jcenter()
         maven {
             url = "https://maven.pkg.github.com/synapseslab/android-bluegps-sdk-demoapp"
-            credentials {
-                username = "dagostinisy"
-                password = "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"
-            }
         }
     }
 }
