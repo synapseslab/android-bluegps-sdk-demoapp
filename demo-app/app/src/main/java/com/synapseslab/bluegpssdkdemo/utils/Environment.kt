@@ -28,13 +28,9 @@ import com.synapseslab.bluegps_sdk.data.model.environment.SdkEnvironment
 object Environment {
 
     private const val APP_ID = "com.synapseslab.demosdk"
-    //private const val SDK_ENDPOINT = "{BLUEGPS-SDK-ENDPOINT_URL}"
-    //private const val SDK_KEY = "{BLUEGPS-SDK-KEY}"
-    //private const val SDK_SECRET = "{BLUEGPS-SDK-SECRET}"
-    private const val SDK_ENDPOINT = "https://demo.bluegps.cloud/"
-    private const val SDK_KEY = "8e86f160-4c8c-492b-934f-b803c93d94cd"
-    private const val SDK_SECRET = "e9497546-8006-40b1-a8da-3f185a85e0d3"
-
+    private const val SDK_ENDPOINT = "{BLUEGPS-SDK-ENDPOINT_URL}"
+    private const val SDK_KEY = "{BLUEGPS-SDK-KEY}"
+    private const val SDK_SECRET = "{BLUEGPS-SDK-SECRET}"
 
     val sdkEnvironment = SdkEnvironment(
         sdkEndpoint = SDK_ENDPOINT,
@@ -43,9 +39,7 @@ object Environment {
         sdkSecret = SDK_SECRET,
     )
 
-
     // For JWT Authentication, this credentials are for demo purpose.
     const val USERNAME = ""
     const val PASSWORD = ""
-
 }
