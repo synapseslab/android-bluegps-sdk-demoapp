@@ -39,6 +39,7 @@ import com.synapseslab.bluegpssdkdemo.BuildConfig
 import com.synapseslab.bluegpssdkdemo.area.AreaActivity
 import com.synapseslab.bluegpssdkdemo.databinding.ActivityHomeBinding
 import com.synapseslab.bluegpssdkdemo.keycloak.KeycloakActivity
+import com.synapseslab.bluegpssdkdemo.location.LocationActivity
 import com.synapseslab.bluegpssdkdemo.login.MainActivity
 import com.synapseslab.bluegpssdkdemo.map.MapActivity
 import com.synapseslab.bluegpssdkdemo.navigation.NavigationActivity
@@ -54,11 +55,7 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
     private var btManager: BluetoothManager? = null
     private var btAdapter: BluetoothAdapter? = null
-
     private lateinit var activityListAdapter: ActivityViewAdapter
-
-    val diagnosticSseRequest =
-        DiagnosticSseRequest(TrackingSseRequest(tags = listOf("CFFF00000001", "CFFF00000002")))
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -246,6 +243,11 @@ class HomeActivity : AppCompatActivity() {
                 title = "Notify position changes",
                 icon = R.drawable.ic_person_pin,
                 cls = NotifyPositionActivity::class.java
+            ),
+            ViewActivity(
+                title = "GPS Location",
+                icon = R.drawable.ic_location,
+                cls = LocationActivity::class.java
             ),
         )
     }
