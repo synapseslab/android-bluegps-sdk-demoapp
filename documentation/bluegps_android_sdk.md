@@ -8,7 +8,7 @@ BlueGPS Android SDK
 - [1. Introduction](#1-introduction)
 - [2. Integration guide](#2-integration-guide)
     - [2.1. Requirements](#21-requirements)
-    - [2.2. Adding the Library to an existing Android application](#22-adding-the-library-to-an-existing-android-application)
+    <!--- [2.2. Adding the Library to an existing Android application](#22-adding-the-library-to-an-existing-android-application)-->
 - [3. Usage guide](#3-usage-guide)
 - [4. Use BlueGPS Advertising Service](#4-use-bluegps-advertising-service)
     - [4.1. Optional](#41-optional)
@@ -103,7 +103,7 @@ Minimum requirements are:
 
 <br />
 
-## 2.2. Adding the Library to an existing Android application
+<!--## 2.2. Adding the Library to an existing Android application
 
 Before you add BlueGPS depencencies, update your repositories in the `settings.gradle` file to include these two repositories
 
@@ -138,7 +138,7 @@ dependencies {
 }
 ```
 
-<div style="page-break-after: always;"></div>
+<div style="page-break-after: always;"></div>-->
 
 # 3. Usage guide
 
