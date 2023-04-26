@@ -5,7 +5,7 @@ Getting started requires you setup a **license**.
 
 ## Installation
 
-Before you add BlueGPS depencencies, update your repositories in the `settings.gradle` file to include these two repositories
+Before you add BlueGPS depencencies, update your repositories in the `settings.gradle` file to include this repository
 
 ```gradle
 dependencyResolutionManagement {
@@ -13,20 +13,18 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        <!--maven { url "https://maven.pkg.github.com/synapseslab/android-bluegps-sdk-demoapp" }-->
         maven { url = uri("https://jitpack.io") }
     }
 }
 ```
 
-Or if you're using an older project setup, add these repositories  in your project level `build.gradle` file:
+Or if you're using an older project setup, add this repository  in your project level `build.gradle` file:
 
 ```gradle
 allprojects {
     repositories {
         google()
         mavenCentral()
-        <!--maven { url "https://maven.pkg.github.com/synapseslab/android-bluegps-sdk-demoapp" }-->
         maven { url = uri("https://jitpack.io") }
     }
 }
