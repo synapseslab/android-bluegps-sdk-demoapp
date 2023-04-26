@@ -3,7 +3,7 @@ Official Android Demo App showcases the BlueGPS SDK features and acts as referen
 Getting started requires you setup a **license**.
 
 
-<!--## Installation
+## Installation
 
 Before you add BlueGPS depencencies, update your repositories in the `settings.gradle` file to include these two repositories
 
@@ -13,7 +13,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven { url "https://maven.pkg.github.com/synapseslab/android-bluegps-sdk-demoapp" }
+        <!--maven { url "https://maven.pkg.github.com/synapseslab/android-bluegps-sdk-demoapp" }-->
+        maven { url = uri("https://jitpack.io") }
     }
 }
 ```
@@ -25,7 +26,8 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        maven { url "https://maven.pkg.github.com/synapseslab/android-bluegps-sdk-demoapp" }
+        <!--maven { url "https://maven.pkg.github.com/synapseslab/android-bluegps-sdk-demoapp" }-->
+        maven { url = uri("https://jitpack.io") }
     }
 }
 ```
@@ -34,9 +36,9 @@ Then add the dependency for BlueGPS-SDK in the `build.gradle` file for your app 
 
 ```gradle
 dependencies {
-    implementation 'com.synapseslab:android-bluegps-sdk:X.Y.Z'
+    implementation 'com.github.synapseslab:android-bluegps-sdk-demoapp:<version>'
 }
-```-->
+```
 
 ## Getting Started
 
