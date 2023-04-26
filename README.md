@@ -73,7 +73,7 @@ dependency>
 </dependency>
 ```
 
-The `Tag` corresponds to release version, for example: `:1.4.2-rc4`
+The `Tag` corresponds to release version, for example: `1.4.2-rc4`
 
 ## Getting Started
 
