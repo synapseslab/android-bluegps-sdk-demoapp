@@ -5,7 +5,11 @@ Getting started requires you setup a **license**.
 
 ## Installation
 
-Before you add BlueGPS depencencies, update your repositories in the `settings.gradle` file to include this repository
+The BlueGPS Android SDK is distributed through Jitpack. It can be integrated through gradle, maven as following:
+
+### Gradle
+
+Before you add BlueGPS depencencies, add it in your `settings.gradle` at the end of repositories
 
 ```gradle
 dependencyResolutionManagement {
@@ -18,7 +22,7 @@ dependencyResolutionManagement {
 }
 ```
 
-Or if you're using an older project setup, add this repository  in your project level `build.gradle` file:
+Or if you're using an older project setup, add it in your `build.gradle` at the end of repositories
 
 ```gradle
 allprojects {
@@ -45,6 +49,31 @@ dependencies {
     implementation 'com.github.synapseslab:android-bluegps-sdk-demoapp:1.4.2-rc4'
 }
 ```
+
+### Maven
+
+Add the JitPack repository to your build file
+
+```maven
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+```
+
+Then add the dependency
+
+```maven
+dependency>
+    <groupId>com.github.synapseslab</groupId>
+    <artifactId>android-bluegps-sdk-demoapp</artifactId>
+    <version>Tag</version>
+</dependency>
+```
+
+The `Tag` corresponds to release version, for example: `:1.4.2-rc4`
 
 ## Getting Started
 
