@@ -910,22 +910,23 @@ For more info check the example app in `SseDiagnosticTagActivity.kt` class.
 
 For activate the position event detection when the user move inside building,
 `BlueGPSLib` expose a specific call `startNotifyRegionChanges(..)` where the params of this function are:
+- `tags` a list of tags to monitoring;
 - `regions` represents the list of the regions to monitor;
-- and a `callbackHandler` callback.
+- and a `callbackHandler` callback that return a map that contains the regions where the tags are currently located.
 
 ```kotlin
 BlueGPSLib.instance.startNotifyRegionChanges(
+    tags = listOf(element = "010001010007"),
     regions = regions,
-    callbackHandler = {
-        val status = if(it.isInside) "Entered in:" else "Exit from:"
-        Log.d(TAG, "$status ${it.name}")
+    callbackHandler = { it: Map<String, MutableList<BGPRegion>> ->
+        
     }
 )
 ```
 
 ### 6.2.1 Event `callbackHandler`
 
-This callback return a value when an event occurred. The object returned `BGPRegion` has this structure:
+This callback return a value when an event occurred. The object `BGPRegion` has this structure:
 
 ```kotlin
 data class BGPRegion(
@@ -945,10 +946,6 @@ data class BGPRegion(
     var isInside: Boolean = false,
 )
 ```
-
-When the `BGPRegion` returned has is `isInside` attribute set to `true` the tag is entered in the region.
-
-Otherwise when the `BGPRegion` returned has is `isInside` attribute set to `false` the tag is exit from the region.
 
 > **Attention:** 
 
