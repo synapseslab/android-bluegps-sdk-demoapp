@@ -1,9 +1,21 @@
 # April 26, 2023 - 1.4.2
 ## android-bluegps-sdk
 ### 🐞 Fixed
-- Fixed `startNotifyRegionChanges()` that now return a map that contains a list regions where the tags are currently located.
+- Fix on `startNotifyRegionChanges()` that now return a map that contains a list regions where the tags are currently located.
+- Fix on `deviceConfiguration()` now send the same UUID
 ### ⬆️ Improved
 ### ✅ Added
+- Booking API Section 
+  - Add function `getAgendaNextMy()`
+  - Add function `scheduleCheck()`
+  - Add function `deleteSchedule()`
+- Add Home API Section
+  - Add function `getHomeMy()`
+- Add Locker API section
+  - Add function `unlockLocker()`
+  - Add function `releaseLocker()`
+- Search API Section
+  - Add function `getFilterResource()`
 ### ⚠️ Changed
 
 # March 7, 2023 - 1.4.1
