@@ -1,3 +1,11 @@
+# April 26, 2023 - 1.4.2
+## android-bluegps-sdk
+### 🐞 Fixed
+- Fixed `startNotifyRegionChanges()` that now return a map that contains a list regions where the tags are currently located.
+### ⬆️ Improved
+### ✅ Added
+### ⚠️ Changed
+
 # March 7, 2023 - 1.4.1
 ## android-bluegps-sdk
 ### 🐞 Fixed
