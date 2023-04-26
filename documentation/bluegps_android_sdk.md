@@ -8,7 +8,7 @@ BlueGPS Android SDK
 - [1. Introduction](#1-introduction)
 - [2. Integration guide](#2-integration-guide)
     - [2.1. Requirements](#21-requirements)
-    <!--- [2.2. Adding the Library to an existing Android application](#22-adding-the-library-to-an-existing-android-application)-->
+    - [2.2. Adding the Library to an existing Android application](#22-adding-the-library-to-an-existing-android-application)
 - [3. Usage guide](#3-usage-guide)
 - [4. Use BlueGPS Advertising Service](#4-use-bluegps-advertising-service)
     - [4.1. Optional](#41-optional)
@@ -103,9 +103,9 @@ Minimum requirements are:
 
 <br />
 
-<!--## 2.2. Adding the Library to an existing Android application
+## 2.2. Adding the Library to an existing Android application
 
-Before you add BlueGPS depencencies, update your repositories in the `settings.gradle` file to include these two repositories
+Before you add BlueGPS depencencies, update your repositories in the `settings.gradle` file to include this repository
 
 ```gradle
 dependencyResolutionManagement {
@@ -113,19 +113,19 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven { url "https://maven.pkg.github.com/synapseslab/android-bluegps-sdk-demoapp" }
+        maven { url = uri("https://jitpack.io") }
     }
 }
 ```
 
-Or if you're using an older project setup, add these repositories  in your project level `build.gradle` file:
+Or if you're using an older project setup, add this repository  in your project level `build.gradle` file:
 
 ```gradle
 allprojects {
     repositories {
         google()
         mavenCentral()
-        maven { url "https://maven.pkg.github.com/synapseslab/android-bluegps-sdk-demoapp" }
+        maven { url = uri("https://jitpack.io") }
     }
 }
 ```
@@ -134,11 +134,19 @@ Then add the dependency for BlueGPS-SDK in the `build.gradle` file for your app 
 
 ```gradle
 dependencies {
-    implementation 'com.synapseslab:android-bluegps-sdk:X.Y.Z'
+    implementation 'com.github.synapseslab:android-bluegps-sdk-demoapp:<version>'
 }
 ```
 
-<div style="page-break-after: always;"></div>-->
+The `version` corresponds to release version, for example:
+
+```gradle
+dependencies {
+    implementation 'com.github.synapseslab:android-bluegps-sdk-demoapp:1.4.2-rc4'
+}
+```
+
+<div style="page-break-after: always;"></div>
 
 # 3. Usage guide
 
