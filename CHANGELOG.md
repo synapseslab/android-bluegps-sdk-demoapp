@@ -1,8 +1,8 @@
 # April 26, 2023 - 1.4.2
 ## android-bluegps-sdk
 ### 🐞 Fixed
-- Fix on `startNotifyRegionChanges()` that now return a map that contains a list regions where the tags are currently located.
-- Fix on `deviceConfiguration()` now send the same UUID
+- Fix on `startNotifyRegionChanges()` that now return a map that contains a list regions where the tags are currently located. [documentation](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/documentation/bluegps_android_sdk.md#62-notify-region-changes)
+- Fix on `deviceConfiguration()` save the UUID in shared preferences.
 ### ⬆️ Improved
 ### ✅ Added
 - Booking API Section 
