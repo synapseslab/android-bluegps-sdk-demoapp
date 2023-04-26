@@ -56,21 +56,23 @@ class NotifyRegionViewModel: ViewModel()  {
 
     private fun startNotifyRegionChanges(regions: List<BGPRegion>) {
         BlueGPSLib.instance.startNotifyRegionChanges(
-            //tags = listOf("010001010001"),
+            tags = listOf("010001010007"),
             regions = regions,
-            callbackHandler = { it: BGPRegion ->
-                val status = if(it.isInside) "Entered in:" else "Exit from:"
-                Log.d(TAG, "$status ${it.name}")
-                logText += "$status ${it.name}\n\n"
-                viewState.postValue(logText)
-
-                /*var concat = ""
+            callbackHandler = { it: Map<String, MutableList<BGPRegion>> ->
+                var concat = ""
                 it.map {
-                    concat += "${it.key} - is inside ${it.value.name}:${it.value.isInside} \n\n"
+                    val key = it.key
+                    var regionList = ""
+                    val myList = it.value
+
+
+                    myList.forEach {
+                        regionList += "${it.name},"
+                    }
+                    concat += "$key - ${regionList}\n"
                 }
-                Log.d(TAG, concat)
                 logText += concat
-                viewState.postValue(logText)*/
+                viewState.postValue(logText)
             }
         )
     }
