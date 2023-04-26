@@ -101,7 +101,7 @@ Minimum requirements are:
 - Minimum SDK: 21
 - Usage of Android X
 
-<br />
+<div style="page-break-after: always;"></div>
 
 ## 2.2. Adding the Library to an existing Android application
 
