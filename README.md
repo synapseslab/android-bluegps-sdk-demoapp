@@ -46,7 +46,7 @@ The `version` corresponds to release version, for example:
 
 ```gradle
 dependencies {
-    implementation 'com.github.synapseslab:android-bluegps-sdk-demoapp:1.4.2-rc4'
+    implementation 'com.github.synapseslab:android-bluegps-sdk-demoapp:1.4.2'
 }
 ```
 
@@ -73,7 +73,7 @@ dependency>
 </dependency>
 ```
 
-The `Tag` corresponds to release version, for example: `1.4.2-rc4`
+The `Tag` corresponds to release version, for example: `1.4.2`
 
 ## Getting Started
 
