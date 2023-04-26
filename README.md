@@ -38,6 +38,14 @@ dependencies {
 }
 ```
 
+The `version` corresponds to release version, for example:
+
+```gradle
+dependencies {
+    implementation 'com.github.synapseslab:android-bluegps-sdk-demoapp:1.4.2-rc4'
+}
+```
+
 ## Getting Started
 
 Your first step is initializing the BlueGPSLib, which is the main entry point for all operations in the library. BlueGPSLib is a singleton: you'll create it once and re-use it across your application.
