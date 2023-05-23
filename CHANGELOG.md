@@ -1,3 +1,16 @@
+# May 23, 2023 - 1.4.3
+## android-bluegps-sdk
+### 🐞 Fixed
+- Minor fix on BlueGPSAuthManager if `useOAuthAuthentication` attribute is `true`
+### ⬆️ Improved
+### ✅ Added
+- Language API section
+  - Add function for get all available dictionaries `getLanguages()`
+  - Add function for get a dictionary for a language code `getLanguage()`
+- Search Object API section
+  - Add new function `getSearchableTrackTag()` to get a searchable track tag list filtering also by NFC code [documentation](https://github.com/synapseslab/android-bluegps-sdk-demoapp/blob/main/documentation/bluegps_android_sdk.md#86-getsearchabletracktag)
+### ⚠️ Changed
+
 # April 26, 2023 - 1.4.2
 ## android-bluegps-sdk
 ### 🐞 Fixed
