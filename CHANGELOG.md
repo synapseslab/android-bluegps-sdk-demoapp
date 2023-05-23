@@ -1,4 +1,5 @@
-# May 23, 2023 - 1.4.3
+# May 23, 2023 - 1.4.4
+For a sync problem there is a jump version from 1.4.2 to 1.4.4
 ## android-bluegps-sdk
 ### 🐞 Fixed
 - Minor fix on BlueGPSAuthManager if `useOAuthAuthentication` attribute is `true`
