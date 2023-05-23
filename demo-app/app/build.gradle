@@ -55,5 +55,5 @@ dependencies {
     //implementation 'androidx.appcompat:appcompat:1.6.1'
 
     //implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
-    implementation 'com.github.synapseslab:android-bluegps-sdk-demoapp:1.4.2'
+    implementation 'com.github.synapseslab:android-bluegps-sdk-demoapp:1.4.4'
 }
