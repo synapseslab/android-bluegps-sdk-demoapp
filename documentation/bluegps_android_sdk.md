@@ -60,8 +60,7 @@ BlueGPS Android SDK
   - [8.3 getTrackElements](#83-gettrackelements)
   - [8.4 getTrackElementPage](#84-gettrackelementpage)
   - [8.5 getTrackGroup](#85-gettrackgroup)
-  - [8.6 getFilter](#86-getfilter)
-  - [8.7 search](#87-search)
+  - [8.6 getSearchableTrackTag](#86-getsearchabletracktag)
 - [9. Controllable items API](#9-controllable-items-api)
 - [10. Area API](#10-area-api)
   - [10.1 getRoomsCoordinates](#101-getroomscoordinates)
@@ -1222,128 +1221,35 @@ data class TrackedGroup(
 ```
 
 
-### 8.6 getFilter
+### 8.6 getSearchableTrackTag
 
-**getFilter** Return filter for the selected type.
+Get a searchable track tag list filtering also by NFC code
 
 ```kotlin
-suspend fun getFilter(type: FilterType): Resource<Filter> {}
+suspend fun getSearchableTrackTag(
+    search: String? = null,
+    tagId: String? = null,
+    label: String? = null,
+    nfcCode: String? = null,
+) : Resource<List<TrackTag>>
 ```
 
-where `type` is 
+where:
+
+- `search` specifying this query param the search is performed on the label, tagid and nfcCode attributes.
+- `tagId` specifying this parameter will return a list of tags that have exactly the specified tagid.
+- `label` specifying this parameter will return a list of tags that have exactly the specified label.
+- `nfcCode` specifying this parameter will return a list of tags that have exactly the specified nfcCode.
+
+The resulting **ResponseMessage** contains a list of `List<TrackTag>` as follow:
 
 ```kotlin
-enum class FilterType {
-    ALL,
-    ROOM_BOOKING,
-    DESK_BOOKING,
-    PARK_BOOKING,
-    OBJECT_BOOKING,
-    SEARCH,
-    MAP
-}
-```
-
-The resulting **ResponseMessage** contains a `Filter` as follow:
-
-```kotlin
-data class Filter(
-    /**
-     * generic search string
-     */
-    val search: String? = null,
-
-    /**
-     * Possible resource, all resource in case of empty
-     */
-    val resourceTypes: List<ResourceType>? = null,
-
-    /**
-     * a boolean indicate if is a favourite
-     */
-    val favourite: Boolean? = false,
-
-    /**
-     * a list of [FilterElement]
-     */
-    val filters: List<FilterElement>? = null,
-)
-```
-
-### 8.7 search
-
-**search** Search a generic resource
-
-```kotlin
-suspend fun search(filter: Filter): Resource<List<Resource>> {}
-```
-
-where `filter` is
-
-```kotlin
-data class Filter(
-    /**
-     * generic search string
-     */
-    val search: String? = null,
-
-    /**
-     * Possible resource, all resource in cas of empty
-     */
-    val resource_type: List<ResourceType>? = null,
-
-    /**
-     * a boolean indicate if is a favourite
-     */
-    val favourite: Boolean? = null,
-
-    /**
-     * a list of [FilterElement]
-     */
-    val filters: List<FilterElement>? = null,
-)
-```
-
-The resulting **ResponseMessage** contains a `List<Resource>` as follow:
-
-```kotlin
-data class Resource(
-    /**
-     * unique id
-     */
-    val id: String,
-
-    /**
-     * the name of the resource
-     */
-    val name: String,
-
-    /**
-     * the resource type [ResourceType]
-     */
-    val type: ResourceType,
-
-    val i18n: String? = null,
-
-    /**
-     * image url (if start with http/s the url is absolute, relative otherwise)
-     */
-    val image: String? = null,
-
-    /**
-     * image url (if start with http/s the url is absolute, relative otherwise)
-     */
-    val images: List<String>? = null,
-
-    val buildingPosition: BuildingPosition? = null,
-
-    val position: Position? = null,
-
-    val bookingConfig: BookingConfig? = null,
-
-    val services: List<ResourceService>? = null,
-
-    val controls: List<Control>? = null,
+data class TrackTag(
+    var tagid: String? = null,
+    var label: String? = null,
+    var color: String? = null,
+    var nfcCode: String? = null,
+    var type: String? = null
 )
 ```
 
