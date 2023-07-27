@@ -12,6 +12,7 @@
 - Add `initAuth` function on MapView
 - Add `getUserProfile()` API that return all associated profiles to the logged user
 - Add `getBuildingList()` API that return a list of Buildings
+- Add `buildings: List<Int>` param to `ConfigurationMap` class to load the maps of the selected building
 ### ⚠️ Changed
 
 # May 23, 2023 - 1.4.4
