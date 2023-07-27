@@ -1,3 +1,19 @@
+# July 27, 2023 - 1.4.5
+## android-bluegps-sdk
+### 🐞 Fixed
+- Fix on `silentLogout()`
+### ⬆️ Improved
+### ✅ Added
+- Do not disturb and Out of Office API
+  - Add `getDndOooDayTime()` to get the filter to set a do not disturb or out of office element
+  - Add `setDndOoo()` to set to do not disturb or out of office and element
+- Add navigation resource API `getNavigationResource()`
+- Add `authError` and `pathRecalculation` callback on MapView
+- Add `initAuth` function on MapView
+- Add `getUserProfile()` API that return all associated profiles to the logged user
+- Add `getBuildingList()` API that return a list of Buildings
+### ⚠️ Changed
+
 # May 23, 2023 - 1.4.4
 For a sync problem there is a jump version from 1.4.2 to 1.4.4
 ## android-bluegps-sdk
