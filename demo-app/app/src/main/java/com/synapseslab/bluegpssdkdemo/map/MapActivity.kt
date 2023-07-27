@@ -75,6 +75,7 @@ class MapActivity : AppCompatActivity() {
             )
         ),
         show = ShowMap(all = false, me = true, room = true),
+        buildings = listOf(1,2)
     )
 
     private var hideRoomLayer = false
