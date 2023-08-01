@@ -114,6 +114,37 @@ object Environment {
 }
 ```
 
+### Keycloak
+
+BlueGPS_SDK provides a client for manage authentication and authorization inside your app. For the configuration in this case use `keyCloakParameters` parameter on `initSDK(..)`.
+
+```kotlin
+BlueGPSLib.instance.initSDK(
+    sdkEnvironment = Environment.sdkEnvironment,
+    context = applicationContext,
+
+    keyCloakParameters = Environment.keyCloakParameters
+)
+```
+
+where `keyCloakParameters` is this object
+
+```kotlin
+    val keyCloakParameters = KeyCloakParameters(
+        authorization_endpoint = "https://[BASE-URL]/realms/[REALMS]/protocol/openid-connect/auth",
+        token_endpoint = "https://[BASE-URL]/realms/[REALMS]/protocol/openid-connect/token",
+        redirect_uri = "{{provided-redirect-uri}}",
+        clientId = "{{provided-client-secret}}",
+        userinfo_endpoint = "https://[BASE-URL]/realms/[REALMS]/protocol/openid-connect/userinfo",
+        end_session_endpoint = "https://[BASE-URL]/realms/[REALMS]/protocol/openid-connect/logout",
+        guestClientSecret = "{{provided-guest-client-secret}}",
+        guestClientId = "{{provided-guest-client-id}}"
+    )
+```
+
+This paramaters are provided by **Synapses** after the purchase of the **BlueGPS license**.
+
+
 ## Sample App
 
 To run the sample app, start by cloning this repo:
