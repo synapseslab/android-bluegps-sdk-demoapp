@@ -10,7 +10,7 @@
   - `saveTicket()` save a ticket
   - `getTicketById()` Return the ticket detail
   - `deleteTicket()` Delete a ticket
-  - `getUUID()` return the UUID if set, null otherwise
+- Add `getUUID()` function that return the UUID if set, null otherwise
 ### ⚠️ Changed
 
 # July 27, 2023 - 1.4.5
