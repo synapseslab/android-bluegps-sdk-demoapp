@@ -1,3 +1,18 @@
+# August 10, 2023 - 1.4.6
+## android-bluegps-sdk
+### 🐞 Fixed
+### ⬆️ Improved
+### ✅ Added
+- Add Ticket API
+  - `getTicketTypes()` Returns the types for tickets ("INTERNAL", "IVIVA")
+  - `getTicketMy()` Return all tickets for the logged user
+  - `getTicketFormManager()` Return the entire form that the interface will have to build
+  - `saveTicket()` save a ticket
+  - `getTicketById()` Return the ticket detail
+  - `deleteTicket()` Delete a ticket
+  - `getUUID()` return the UUID if set, null otherwise
+### ⚠️ Changed
+
 # July 27, 2023 - 1.4.5
 ## android-bluegps-sdk
 ### 🐞 Fixed
