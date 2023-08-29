@@ -1,3 +1,11 @@
+# August 29, 2023 - 1.4.7
+## android-bluegps-sdk
+### 🐞 Fixed
+- Fix `startNotifyRegionChanges()` function
+### ⬆️ Improved
+### ✅ Added
+### ⚠️ Changed
+
 # August 10, 2023 - 1.4.6
 ## android-bluegps-sdk
 ### 🐞 Fixed
