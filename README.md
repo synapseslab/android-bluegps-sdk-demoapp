@@ -144,6 +144,26 @@ where `keyCloakParameters` is this object
 
 This paramaters are provided by **Synapses** after the purchase of the **BlueGPS license**.
 
+Then in your `AndroidManifest.xml` add this and change `host` and `scheme` with your configuration.
+
+```xml
+<activity
+    android:name="com.synapseslab.bluegps_sdk.authentication.presentation.AuthenticationActivity"
+    android:exported="true">
+    <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+
+        <data
+            android:host="{HOST}"
+            android:scheme="{SCHEME}" />
+    </intent-filter>
+</activity>
+```
+
+Now your app is ready for use keycloak. See `KeycloakActivity.kt` example for an example of login, logout or refresh token.
+
 
 ## Sample App
 
