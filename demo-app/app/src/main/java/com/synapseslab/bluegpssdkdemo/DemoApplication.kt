@@ -36,7 +36,7 @@ class DemoApplication : Application() {
         BlueGPSLib.instance.initSDK(
             sdkEnvironment = Environment.sdkEnvironment,
             context = this,
-            enabledNetworkLogs = true
+            enabledNetworkLogs = BuildConfig.DEBUG,
         )
     }
 

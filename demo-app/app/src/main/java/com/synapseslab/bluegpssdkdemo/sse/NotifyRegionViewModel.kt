@@ -56,7 +56,7 @@ class NotifyRegionViewModel: ViewModel()  {
 
     private fun startNotifyRegionChanges(regions: List<BGPRegion>) {
         BlueGPSLib.instance.startNotifyRegionChanges(
-            tags = listOf("010001010007"),
+            tags = listOf("010001010007", "RRRR00000010"),
             regions = regions,
             callbackHandler = { it: Map<String, MutableList<BGPRegion>> ->
                 var concat = ""
@@ -67,7 +67,7 @@ class NotifyRegionViewModel: ViewModel()  {
 
 
                     myList.forEach {
-                        regionList += "${it.name},"
+                        regionList += "${it.id}-${it.areaId}-${it.name},"
                     }
                     concat += "$key - ${regionList}\n"
                 }
