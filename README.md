@@ -46,7 +46,7 @@ The `version` corresponds to release version, for example:
 
 ```gradle
 dependencies {
-    implementation 'com.github.synapseslab:android-bluegps-sdk-demoapp:1.4.2'
+    implementation 'com.github.synapseslab:android-bluegps-sdk-demoapp:X.Y.Z'
 }
 ```
 
