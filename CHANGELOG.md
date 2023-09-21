@@ -1,3 +1,12 @@
+# September 21, 2023 - 1.4.8
+## android-bluegps-sdk
+### 🐞 Fixed
+- Fix `startNotifyRegionChanges()` function
+### ⬆️ Improved
+- Change `getRegionListInWhichIsContained()` function that in some cases return a not valid id or a null value
+### ✅ Added
+### ⚠️ Changed
+
 # August 29, 2023 - 1.4.7
 ## android-bluegps-sdk
 ### 🐞 Fixed
