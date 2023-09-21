@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.synapseslab</groupId>
   <artifactId>android-bluegps-sdk</artifactId>
-  <version>1.4.7</version>
+  <version>1.4.8</version>
   <packaging>aar</packaging>
   <build>
     <plugins>
@@ -63,6 +63,11 @@
       <groupId>androidx.lifecycle</groupId>
       <artifactId>lifecycle-livedata-ktx</artifactId>
       <version>2.6.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.locationtech.jts</groupId>
+      <artifactId>jts-core</artifactId>
+      <version>1.18.0</version>
     </dependency>
     <dependency>
       <groupId>androidx.appcompat</groupId>
