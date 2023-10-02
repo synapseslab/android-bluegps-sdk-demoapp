@@ -1,3 +1,11 @@
+# October 2, 2023 - 1.4.9
+## android-bluegps-sdk
+
+### 🐞 Fixed
+### ⬆️ Improved
+### ✅ Added
+- Add `tagid` property to `AdvDeviceConfiguration` class
+### ⚠️ Changed
 # September 21, 2023 - 1.4.8
 ## android-bluegps-sdk
 ### 🐞 Fixed
