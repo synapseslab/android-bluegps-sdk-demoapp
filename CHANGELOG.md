@@ -5,7 +5,7 @@
 ### ⬆️ Improved
 ### ✅ Added
 ### ⚠️ Changed
-- `getDeviceConfiguration()` API now has `tagId` as optional property
+- `getDeviceConfiguration(tagId: String? = null)` API now has `tagId` as an optional property
 
 # October 2, 2023 - 1.4.9
 ## android-bluegps-sdk
