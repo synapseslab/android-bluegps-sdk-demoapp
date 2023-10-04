@@ -1,3 +1,12 @@
+# October 4, 2023 - 1.4.10
+## android-bluegps-sdk
+
+### 🐞 Fixed
+### ⬆️ Improved
+### ✅ Added
+### ⚠️ Changed
+- `getDeviceConfiguration()` API now has `tagId` as optional property
+
 # October 2, 2023 - 1.4.9
 ## android-bluegps-sdk
 

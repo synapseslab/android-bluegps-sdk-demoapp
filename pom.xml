@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.synapseslab</groupId>
   <artifactId>android-bluegps-sdk</artifactId>
-  <version>1.4.9</version>
+  <version>1.4.10</version>
   <packaging>aar</packaging>
   <build>
     <plugins>
