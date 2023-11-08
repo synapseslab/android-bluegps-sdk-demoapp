@@ -45,6 +45,7 @@ import com.synapseslab.bluegpssdkdemo.map.MapActivity
 import com.synapseslab.bluegpssdkdemo.navigation.NavigationActivity
 import com.synapseslab.bluegpssdkdemo.resources.SearchResourcesActivity
 import com.synapseslab.bluegpssdkdemo.search_object.SearchObjectsActivity
+import com.synapseslab.bluegpssdkdemo.sse.GenericEventsActivity
 import com.synapseslab.bluegpssdkdemo.sse.NotifyPositionActivity
 
 
@@ -243,6 +244,11 @@ class HomeActivity : AppCompatActivity() {
                 title = "Notify position changes",
                 icon = R.drawable.ic_person_pin,
                 cls = NotifyPositionActivity::class.java
+            ),
+            ViewActivity(
+                title = "Generic events",
+                icon = R.drawable.ic_data_object,
+                cls = GenericEventsActivity::class.java
             ),
             ViewActivity(
                 title = "GPS Location",
