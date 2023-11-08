@@ -30,8 +30,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
-import com.synapseslab.bluegps_sdk.data.model.diagnostic.request.DiagnosticSseRequest
-import com.synapseslab.bluegps_sdk.data.model.diagnostic.request.response.TrackingSseRequest
 import com.synapseslab.bluegpssdkdemo.sse.DiagnosticTagActivity
 import com.synapseslab.bluegpssdkdemo.sse.NotifyRegionActivity
 import com.synapseslab.bluegpssdkdemo.R

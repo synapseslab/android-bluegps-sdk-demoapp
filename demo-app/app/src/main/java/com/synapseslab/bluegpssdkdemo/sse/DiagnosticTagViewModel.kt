@@ -20,7 +20,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.synapseslab.bluegps_sdk.core.BlueGPSLib
 import com.synapseslab.bluegps_sdk.data.model.diagnostic.request.DiagnosticSseRequest
-import com.synapseslab.bluegps_sdk.data.model.diagnostic.request.response.TrackingSseRequest
+import com.synapseslab.bluegps_sdk.data.model.diagnostic.request.TrackingSseRequest
 
 private const val TAG = "DiagnosticTagViewModel"
 
