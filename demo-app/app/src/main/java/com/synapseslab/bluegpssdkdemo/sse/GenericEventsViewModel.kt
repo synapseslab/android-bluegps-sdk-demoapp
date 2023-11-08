@@ -45,7 +45,7 @@ class GenericEventsViewModel : ViewModel() {
             subscriptionRequest = SubscriptionRequest(
                 filter = RequestFilter(
                     streamType = StreamType.TAGID_EVENT,
-                    outputEvents = listOf("TAGID_EVENT", "test")
+                    outputEvents = listOf("TAGID_EVENT")
                 ),
                 update = RequestUpdate()
             ),
