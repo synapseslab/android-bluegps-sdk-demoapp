@@ -15,6 +15,7 @@
 
 package com.synapseslab.bluegpssdkdemo.utils
 
+import com.synapseslab.bluegps_sdk.authentication.data.models.KeyCloakParameters
 import com.synapseslab.bluegps_sdk.data.model.environment.SdkEnvironment
 
 /**
@@ -27,10 +28,10 @@ import com.synapseslab.bluegps_sdk.data.model.environment.SdkEnvironment
  */
 object Environment {
 
-    private const val APP_ID = "com.synapseslab.demosdk"
-    private const val SDK_ENDPOINT = "{BLUEGPS-SDK-ENDPOINT_URL}"
-    private const val SDK_KEY = "{BLUEGPS-SDK-KEY}"
-    private const val SDK_SECRET = "{BLUEGPS-SDK-SECRET}"
+    private val SDK_ENDPOINT = "{{provided-bluegps-endpoint}}"
+    private val SDK_KEY = "{{provided-sdk-key}}"
+    private val SDK_SECRET = "{{provided-sdk-secret}}"
+    private val APP_ID = "com.synapseslab.demosdk"
 
     val sdkEnvironment = SdkEnvironment(
         sdkEndpoint = SDK_ENDPOINT,
@@ -42,4 +43,16 @@ object Environment {
     // For JWT Authentication, this credentials are for demo purpose.
     const val USERNAME = ""
     const val PASSWORD = ""
+
+
+    val keyCloakParameters = KeyCloakParameters(
+        authorization_endpoint = "https://[BASE-URL]/realms/[REALMS]/protocol/openid-connect/auth",
+        token_endpoint = "https://[BASE-URL]/realms/[REALMS]/protocol/openid-connect/token",
+        redirect_uri = "{{provided-redirect-uri}}",
+        clientId = "{{provided-client-secret}}",
+        userinfo_endpoint = "https://[BASE-URL]/realms/[REALMS]/protocol/openid-connect/userinfo",
+        end_session_endpoint = "https://[BASE-URL]/realms/[REALMS]/protocol/openid-connect/logout",
+        guestClientSecret = "{{provided-guest-client-secret}}",
+        guestClientId = "{{provided-guest-client-id}}"
+    )
 }
