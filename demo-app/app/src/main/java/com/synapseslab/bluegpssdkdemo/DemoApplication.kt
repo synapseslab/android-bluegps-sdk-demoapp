@@ -37,6 +37,7 @@ class DemoApplication : Application() {
             sdkEnvironment = Environment.sdkEnvironment,
             context = this,
             enabledNetworkLogs = BuildConfig.DEBUG,
+            keyCloakParameters = Environment.keyCloakParameters
         )
     }
 
