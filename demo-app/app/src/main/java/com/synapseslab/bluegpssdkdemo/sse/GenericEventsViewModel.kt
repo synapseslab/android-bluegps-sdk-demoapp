@@ -40,6 +40,7 @@ class GenericEventsViewModel : ViewModel() {
          *
          * @param subscriptionRequest [SubscriptionRequest]
          * @param callbackHandler returns a generic event
+         * @param onStop callback when the connection with server is closed
          */
         BlueGPSLib.instance.startNotifyEventChanges(
             subscriptionRequest = SubscriptionRequest(
