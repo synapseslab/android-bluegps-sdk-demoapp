@@ -29,6 +29,9 @@
             android:name=".sse.DiagnosticTagActivity"
             android:exported="false" />
         <activity
+            android:name=".sse.GenericEventsActivity"
+            android:exported="false" />
+        <activity
             android:name=".navigation.NavigationActivity"
             android:exported="false" />
         <activity
@@ -56,6 +59,20 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.synapseslab.bluegps_sdk.authentication.presentation.AuthenticationActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="{host}"
+                    android:scheme="{scheme}" />
             </intent-filter>
         </activity>
     </application>
