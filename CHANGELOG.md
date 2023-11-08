@@ -1,3 +1,26 @@
+# November 8, 2023 - 1.5.0
+## android-bluegps-sdk
+
+### 🐞 Fixed
+- Fixed registerReceiver
+### ⬆️ Improved
+### ✅ Added
+- Add `setCompass(deg: Double)` on MapView
+- Add `followUserTag` callback on MapView
+- Add `FollowUserTag` class
+- Add `nearJump` and `nearDestination` callback on MapView
+- Add Notifications API
+  - `allNotifications` Returns all available notifications
+  - `countNotifications` Returns the number of notifications to read
+  - `deleteNotifications` Delete the notifications
+  - `updateNotifications` For update the status of the notifications
+  - `registerDeviceForNotifications` For register the device and the push token for receive notifications
+- Add SSE for generic events
+- Add onStop callback on all SSE API
+### ⚠️ Changed
+- Changed BlueGPSAuthManager, removed SCHEDULE_ALARM permission
+- Removed BlueGPSAlarmManager
+
 # October 4, 2023 - 1.4.10
 ## android-bluegps-sdk
 
