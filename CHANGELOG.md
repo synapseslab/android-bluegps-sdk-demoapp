@@ -1,3 +1,14 @@
+# November 10, 2023 - 1.5.1
+## android-bluegps-sdk
+
+### 🐞 Fixed
+### ⬆️ Improved
+### ✅ Added
+### ⚠️ Changed
+- Changed `startNotifyEventChanges()`. Now the function receive a `streamType`, 
+`outputEvents` a list of events to be notified for the specific types of stream and a 
+`tagIdList` a list of tag id to monitoring. If empty receive notifications for all tags.
+
 # November 8, 2023 - 1.5.0
 ## android-bluegps-sdk
 

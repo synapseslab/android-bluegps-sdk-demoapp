@@ -20,10 +20,7 @@ import androidx.lifecycle.ViewModel
 import com.synapseslab.bluegps_sdk.core.BlueGPSLib
 import com.synapseslab.bluegps_sdk.core.startNotifyEventChanges
 import com.synapseslab.bluegps_sdk.core.stopNotifyEventChanges
-import com.synapseslab.bluegps_sdk.data.model.sse.RequestFilter
-import com.synapseslab.bluegps_sdk.data.model.sse.RequestUpdate
 import com.synapseslab.bluegps_sdk.data.model.sse.StreamType
-import com.synapseslab.bluegps_sdk.data.model.sse.SubscriptionRequest
 
 private const val TAG = "GenericViewModel"
 
@@ -38,18 +35,16 @@ class GenericEventsViewModel : ViewModel() {
          * Accessory method for activate the notify generic event.
          * If a previously job is active, its stopped and a new job started with the new configuration.
          *
-         * @param subscriptionRequest [SubscriptionRequest]
-         * @param callbackHandler returns a generic event
-         * @param onStop callback when the connection with server is closed
+         * @param streamType type of the stream.
+         * @param outputEvents List of events to be notified for the specific types of stream.
+         * @param tagIdList List of tag id to monitoring. If empty receive notification for all tags.
+         * @param callbackHandler returns a generic event.
+         * @param onStop callback when the connection with the server is closed.
          */
         BlueGPSLib.instance.startNotifyEventChanges(
-            subscriptionRequest = SubscriptionRequest(
-                filter = RequestFilter(
-                    streamType = StreamType.TAGID_EVENT,
-                    outputEvents = listOf("TAGID_EVENT")
-                ),
-                update = RequestUpdate()
-            ),
+            streamType = StreamType.TAGID_EVENT,
+            outputEvents = listOf("test"),
+            tagIdList = listOf("DADA00000001",),
             callbackHandler = {
                 logText += "$it\n\n"
                 viewState.postValue(logText)
