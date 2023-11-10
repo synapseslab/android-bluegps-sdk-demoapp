@@ -53,6 +53,9 @@ BlueGPS Android SDK
     - [6.3 Notify position changes](#63-notify-position-changes)
       - [6.3.1 Event `callbackHandler`](#631-event-callbackhandler)
       - [6.3.2 Stop notify position changes](#632-stop-notify-position-changes)
+    - [6.4 Notify generic events](#64-notify-generic-events)
+      - [6.4.1 Event `callbackHandler`](#641-event-callbackhandler)
+      - [6.4.2 Stop notify event changes](#642-stop-notify-event-changes)
 - [7. Resources API](#7-resources-api)
 - [8. Search object API](#8-search-object-api)
   - [8.1 getTrackElement](#81-gettrackelement)
@@ -1026,6 +1029,60 @@ BlueGPSLib.instance.stopNotifyPositionChanges()
 
 > If during the life of the app it's necessary change the configuration it will be enough to re-call `startNotifyPositionChanges(..)`
 because this method stop a previously job active and start the event detection with the new configuration.
+
+<br />
+
+For more info check the example app in `NotifyPositionActivity.kt` class.
+
+<div style="page-break-after: always;"></div>
+
+## 6.4 Notify generic events
+
+For activate the generic event detection,
+`BlueGPSLib` expose a specific call `startNotifyEventChanges()` where the params of this function are:
+- `streamType` type of the stream.
+- `outputEvents` List of events to be notified for the specific types of stream.
+- `tagIdList` List of tag id to monitoring. If empty receive notification for all tags.
+- `callbackHandler` returns a generic event.
+- `onStop` callback when the connection with the server is closed.
+
+```kotlin
+BlueGPSLib.instance.startNotifyEventChanges(
+    streamType = StreamType.TAGID_EVENT,
+    outputEvents = listOf("test"),
+    tagIdList = listOf("DADA00000001",),
+    callbackHandler = {
+
+    },
+    onStop = {
+
+    }
+)
+```
+
+### 6.4.1 Event `callbackHandler`
+
+This callback return a value when an event occurred. The object returned `Event` has this structure:
+
+```kotlin
+data class Event(
+    val id: String? = null, 
+    val name: String? = null, 
+    val data: String? = null
+)
+```
+
+### 6.4.2 Stop notify event changes
+
+`BlueGPSLib` expose an accessory method for deactivate the Notify generic job.
+
+```kotlin
+BlueGPSLib.instance.stopNotifyEventChanges()
+```
+
+<br />
+
+> If during the life of the app it's necessary change the configuration it will be enough to re-call `startNotifyEventChanges(..)` because this method stop a previously job active and start the event detection with the new configuration.
 
 <br />
 
