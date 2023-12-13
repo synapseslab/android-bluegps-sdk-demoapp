@@ -101,28 +101,26 @@ The BlueGSP-SDK use an `Environment` where integrator have to put SDK data for r
 object Environment {
 
     private val SDK_ENDPOINT = "{{provided-bluegps-endpoint}}"
-    private val SDK_KEY = "{{provided-sdk-key}}"
-    private val SDK_SECRET = "{{provided-sdk-secret}}"
     private val APP_ID = "com.synapseslab.demosdk"
 
     val sdkEnvironment = SdkEnvironment(
         sdkEndpoint = SDK_ENDPOINT,
         appId = APP_ID,
-        sdkKey = SDK_KEY,
-        sdkSecret = SDK_SECRET,
     )
 }
 ```
 
-### Keycloak
+### App Authentication
 
-BlueGPS_SDK provides a client for manage authentication and authorization inside your app. For the configuration in this case use `keyCloakParameters` parameter on `initSDK(..)`.
+The BlueGPS_SDK offers a client for managing authentication and authorization within your application. It leverages [Keycloak](https://www.keycloak.org/) to handle user authentication.
+
+
+For the configuration in this case use `keyCloakParameters` parameter on `initSDK(..)`.
 
 ```kotlin
 BlueGPSLib.instance.initSDK(
     sdkEnvironment = Environment.sdkEnvironment,
     context = applicationContext,
-
     keyCloakParameters = Environment.keyCloakParameters
 )
 ```
@@ -134,17 +132,37 @@ where `keyCloakParameters` is this object
         authorization_endpoint = "https://[BASE-URL]/realms/[REALMS]/protocol/openid-connect/auth",
         token_endpoint = "https://[BASE-URL]/realms/[REALMS]/protocol/openid-connect/token",
         redirect_uri = "{{provided-redirect-uri}}",
-        clientId = "{{provided-client-secret}}",
+        clientId = "{{provided-client-secret}}", // for user authentication
         userinfo_endpoint = "https://[BASE-URL]/realms/[REALMS]/protocol/openid-connect/userinfo",
         end_session_endpoint = "https://[BASE-URL]/realms/[REALMS]/protocol/openid-connect/logout",
-        guestClientSecret = "{{provided-guest-client-secret}}",
-        guestClientId = "{{provided-guest-client-id}}"
+        guestClientSecret = "{{provided-guest-client-secret}}", // for guest authentication
+        guestClientId = "{{provided-guest-client-id}}" // for guest authentication
     )
 ```
 
-This paramaters are provided by **Synapses** after the purchase of the **BlueGPS license**.
 
-Then in your `AndroidManifest.xml` add this and change `host` and `scheme` with your configuration.
+BlueGPS provides 2 kinds of authentication: 
+    
+- **User Authentication:**
+    
+If you want only the User authentication you must set the **`clientId`**. 
+
+This means that for each device this is the user on Keycloak that can manage grants for this particular user. 
+
+- **Guest Authentication:**
+
+If you want only the Guest authentication, you must set the **`guestClientSecret`** and **`guestClientId`**. 
+
+This means that we don't have a user that has to login but we use client credentials and there is not an individual user for each app install. Instead BlueGPS treats the user account as a "guest"
+In this case multiple devices can use the same client credentials to be authenticated and BlueGPS will register the user as a device, and not as a formal Keycloak user.
+
+<br />
+
+> This paramaters are provided by **Synapses** after the purchase of the **BlueGPS license**.
+
+<br />
+
+Finally in your `AndroidManifest.xml` add this and change `host` and `scheme` with your configuration.
 
 ```xml
 <activity
@@ -163,6 +181,27 @@ Then in your `AndroidManifest.xml` add this and change `host` and `scheme` with 
 ```
 
 Now your app is ready for use keycloak. See `KeycloakActivity.kt` example for an example of login, logout or refresh token.
+
+#### Legacy Authentication
+
+To ensure backward compatibility with applications that still utilize the old authentication mechanism, only set the `SDK_KEY` and `SDK_SECRET` values. This practice allows seamless integration with legacy apps while maintaining the necessary authentication parameters.
+
+```kotlin
+object Environment {
+
+    private val SDK_ENDPOINT = "{{provided-bluegps-endpoint}}"
+    private val SDK_KEY = "{{provided-sdk-key}}"
+    private val SDK_SECRET = "{{provided-sdk-secret}}"
+    private val APP_ID = "com.synapseslab.demosdk"
+
+    val sdkEnvironment = SdkEnvironment(
+        sdkEndpoint = SDK_ENDPOINT,
+        appId = APP_ID,
+        sdkKey = SDK_KEY,
+        sdkSecret = SDK_SECRET,
+    )
+}
+```
 
 
 ## Sample App
