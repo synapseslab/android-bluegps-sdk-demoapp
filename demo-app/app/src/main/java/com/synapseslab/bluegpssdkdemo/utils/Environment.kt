@@ -28,23 +28,31 @@ import com.synapseslab.bluegps_sdk.data.model.environment.SdkEnvironment
  */
 object Environment {
 
-    private val SDK_ENDPOINT = "{{provided-bluegps-endpoint}}"
-    private val SDK_KEY = "{{provided-sdk-key}}"
-    private val SDK_SECRET = "{{provided-sdk-secret}}"
+    private const val SDK_ENDPOINT = "{{provided-bluegps-endpoint}}"
     private val APP_ID = "com.synapseslab.demosdk"
 
     val sdkEnvironment = SdkEnvironment(
         sdkEndpoint = SDK_ENDPOINT,
         appId = APP_ID,
-        sdkKey = SDK_KEY,
-        sdkSecret = SDK_SECRET,
     )
 
-    // For JWT Authentication, this credentials are for demo purpose.
-    const val USERNAME = ""
-    const val PASSWORD = ""
-
-
+    /**
+     * AUTHENTICATION
+     *
+     * BlueGPS provides 2 kinds of authentication:
+     *
+     * - User Authentication:
+     *
+     * If you want only the User authentication you must set the @clientId.
+     * This means that for each device this is the user on Keycloak that can manage grants for this particular user.
+     *
+     * - Guest Authentication:
+     *
+     * If you want only the Guest authentication, you must set the @guestClientSecret and @guestClientId.
+     * This means that we don't have a user that has to login but we use client credentials and there is not an individual user for each app install.
+     * Instead BlueGPS treats the user account as a "guest". In this case multiple devices can use the same client credentials to be authenticated and
+     * BlueGPS will register the user as a device, and not as a formal Keycloak user.
+     */
     val keyCloakParameters = KeyCloakParameters(
         authorization_endpoint = "https://[BASE-URL]/realms/[REALMS]/protocol/openid-connect/auth",
         token_endpoint = "https://[BASE-URL]/realms/[REALMS]/protocol/openid-connect/token",
