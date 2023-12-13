@@ -41,8 +41,6 @@ import com.synapseslab.bluegps_sdk.service.BlueGPSAdvertisingService
 import com.synapseslab.bluegpssdkdemo.R
 import com.synapseslab.bluegpssdkdemo.databinding.ActivityMainBinding
 import com.synapseslab.bluegpssdkdemo.utils.Environment
-import com.synapseslab.bluegpssdkdemo.utils.Environment.PASSWORD
-import com.synapseslab.bluegpssdkdemo.utils.Environment.USERNAME
 import com.synapseslab.bluegpssdkdemo.utils.hide
 import com.synapseslab.bluegpssdkdemo.utils.hideKeyboard
 import com.synapseslab.bluegpssdkdemo.utils.show
@@ -176,8 +174,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun fillJwtMode() {
-        binding.username.setText(USERNAME)
-        binding.password.setText(PASSWORD)
+        binding.username.setText("")
+        binding.password.setText("")
     }
 
 
