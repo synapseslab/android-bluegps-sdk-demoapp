@@ -1,3 +1,17 @@
+# December 13, 2023 - 1.5.2
+## android-bluegps-sdk
+
+### 🐞 Fixed
+- Fix on BlueGPSAuthManager class
+- On Keycloak class some params now are optional
+### ⬆️ Improved
+### ✅ Added
+- Add Marker API
+  - activatePositionMarker() to activate/deactivate position marker layer to the map
+  - clearPositionMarker() clear and remove position marker
+  - getPositionMarker() retrive position marker
+### ⚠️ Changed
+
 # November 10, 2023 - 1.5.1
 ## android-bluegps-sdk
 
