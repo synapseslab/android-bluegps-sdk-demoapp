@@ -1,3 +1,12 @@
+# January 16, 2023 - 1.5.3
+## android-bluegps-sdk
+
+### 🐞 Fixed
+### ⬆️ Improved
+### ✅ Added
+### ⚠️ Changed
+- `getDeviceConfiguration(tagId: String? = null)` API deprecated, use the new `getOrCreateConfiguration(tagId: String? = null)`
+
 # December 13, 2023 - 1.5.2
 ## android-bluegps-sdk
 
