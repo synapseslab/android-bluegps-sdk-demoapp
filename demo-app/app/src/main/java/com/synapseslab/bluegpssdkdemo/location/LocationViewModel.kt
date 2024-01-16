@@ -33,7 +33,7 @@ class LocationViewModel : ViewModel() {
      */
     fun getDeviceConfiguration(handleResult: (Resource<AndroidAdvConfiguration>) -> Unit) {
         viewModelScope.launch {
-            when(val res = BlueGPSLib.instance.getDeviceConfiguration()) {
+            when(val res = BlueGPSLib.instance.getOrCreateConfiguration()) {
                 is Resource.Error -> handleResult(Resource.Error(message = res.message, code = res.code))
                 is Resource.Exception -> {
                     handleResult(Resource.Exception(res.e))

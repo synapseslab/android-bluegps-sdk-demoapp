@@ -64,7 +64,7 @@ class MainViewModel : ViewModel() {
     fun getDeviceConfiguration() {
 
         viewModelScope.launch {
-            when(val result = BlueGPSLib.instance.getDeviceConfiguration()) {
+            when(val result = BlueGPSLib.instance.getOrCreateConfiguration()) {
                 is Resource.Error -> {
                     deviceConfiguration.value = ViewState.failed("- ${result.message}")
                 }

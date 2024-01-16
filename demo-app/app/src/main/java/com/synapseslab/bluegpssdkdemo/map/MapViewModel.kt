@@ -37,7 +37,7 @@ class MapViewModel : ViewModel() {
     fun getDeviceConfiguration() {
 
         viewModelScope.launch {
-            when(val result = BlueGPSLib.instance.getDeviceConfiguration()) {
+            when(val result = BlueGPSLib.instance.getOrCreateConfiguration()) {
                 is Resource.Error -> {
                     viewState.value = ViewState.failed("- ${result.message}")
                 }
