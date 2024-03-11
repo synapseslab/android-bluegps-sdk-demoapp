@@ -40,7 +40,12 @@ BlueGPS Android SDK
       - [5.3.22 centerToRoom](#5322-centertoroom)
       - [5.3.23 centerToPosition](#5323-centertoposition)
       - [5.3.24 initAllBookingLayerBy](#5324-initallbookinglayerby)
-      - [5.3.25 setDarkMode](#5325-setdarkmode)   
+      - [5.3.25 setDarkMode](#5325-setdarkmode)
+      - [5.3.26 showResourceOnMap](#5326-showresourceonmap)
+      - [5.3.27 clearSelection](#5327-clearselection)
+      - [5.3.28 activatePositionMarker](#5328-activatepositionmarker)
+      - [5.3.29 clearPositionMarker](#5329-clearpositionmarker) 
+      - [5.3.30 getPositionMarker](#5330-getpositionmarker)    
 - [6. Server Sent Events](#6-server-sent-events)
     - [6.1 Diagnostic SSE](#61-diagnostic-sse)
       - [Event `complete`](#event-complete)
@@ -76,6 +81,13 @@ BlueGPS Android SDK
   - [11.2 getAgendaMy](#112-getagendamy)
   - [11.3 agendaFind](#113-agendafind)
   - [11.4 schedule](#114-schedule)
+  - [11.5 deleteSchedule](#115-deleteschedule)
+  - [11.6 search](#116-search)
+  - [11.7 getFilterSection](#117-getfiltersection)
+  - [11.8 getFilterResource](#118-getfilterresource)
+  - [11.9 getFilter](#119-getfilter)
+  - [11.10 getElementResource](#1110-getelementresource)
+  - [11.11 putFavourite](#1111-putfavourite)
 - [12. OAuth client for keycloak authentication](#12-oauth-client-for-keycloak-authentication)
   - [12.1 Client Configuration](#121-client-configuration)
 
@@ -299,8 +311,15 @@ data class AndroidAdvConfiguration(
 For obtain a device configuration for advertising call this function:
 
 ```kotlin
-suspend fun getDeviceConfiguration(): Resource<AndroidAdvConfiguration>
+suspend fun getOrCreateConfiguration(): Resource<AndroidAdvConfiguration>
 ```
+
+if you want to submit a specific tag to be bound to your app you can use the following:
+
+```kotlin
+suspend fun getOrCreateConfiguration(tagId: "012345678912"): Resource<AndroidAdvConfiguration>
+```
+
 
 For stop you service advertising call:
 
@@ -531,6 +550,8 @@ List of the callbacks:
 - `TypeMapCallback.ROOM_ENTER` triggered when user enter a room.
 - `TypeMapCallback.ROOM_EXIT` triggered when user exit a room.
 - `TypeMapCallback.FLOOR_CHANGE` triggered when the user change floor.
+- `TypeMapCallback.RESOURCE_CLICK` triggered when the user click on resource on map.
+- `TypeMapCallback.PATH_RECALCULATION` triggered when the map recalculate the path.
 - `TypeMapCallback.SUCCESS` triggered when a generic async action end with success.
 - `TypeMapCallback.ERROR` triggered when a generic async action end with error.
 
@@ -586,8 +607,7 @@ This action allow to load the next floor on the web view.
 mapView.showTag(tagid: String, follow: Boolean)
 ```
 
-This action find the tag with the specified tagid and if found switch to the right floor and follow
-the tag if `follow` is true.
+This action find the tag with the specified tagid and if found switch to the right floor and follow the tag if `follow` is true.
 
 ### 5.3.7 getFloor
 
@@ -625,8 +645,7 @@ mapView.gotoFromMe(
     navigationMode: Boolean = false)
 ```
 
-This function enable path drawing for a specific destination. The path drawing will from the user
-position to the selected destination position.
+This function enable path drawing for a specific destination. The path drawing will from the user position to the selected destination position.
 
 `navigationMode`: if true, draw the path in navigation mode.
 
@@ -639,8 +658,7 @@ mapView.goto(
     navigationMode: Boolean = false)
 ```
 
-This function enable path drawing for a specific destination. The path drawing will from the source
-position to the selected destination position.
+This function enable path drawing for a specific destination. The path drawing will from the source position to the selected destination position.
 
 `navigationMode`: if true, draw the path in navigation mode.
 
@@ -757,7 +775,7 @@ Draw a pin in the passed position. The pin has the icon passed as parameter.
 mapView.getCurrentFloor()
 ```
 
-Return the current floor.
+Return the current floor on the map.
 
 ### 5.3.22 centerToRoom
 
@@ -778,7 +796,7 @@ mapView.centerToPosition(mapPosition: Position, zoom: Double)
 - `mapPosition` the object position
 - `zoom` the zoom level. The range is a double [0.7, 10]
 
-Center the map to the specified position.
+Center the map to the specified position with defined zoom level.
 
 ### 5.3.24 initAllBookingLayerBy
 
@@ -799,6 +817,58 @@ mapView.setDarkMode(darkMode: Boolean)
 - `darkMode` a boolean
 
 To change the style of the map darkMode or lightMode
+
+### 5.3.26 showResourceOnMap
+
+```kotlin
+mapView.showResourceOnMap(
+    resources: List<Resource>? = emptyList(), 
+    autoFloor: Boolean = true
+)
+```
+
+- `resources` a list of [Resource]
+- `autofloor` If autofloor is enabled the map floor is changed according to resources visibility.
+
+Show the provided resources list on map.
+
+### 5.3.27 clearSelection
+
+```kotlin
+mapView.clearSelection()
+```
+
+Clear the selection of resources on map.
+
+### 5.3.28 activatePositionMarker
+
+```kotlin
+mapView.activatePositionMarker(enable: Boolean)
+```
+
+- `enable` a booelan true to activate, false to deactivate
+
+Activate/Deactivate Position marker layer.
+
+### 5.3.29 clearPositionMarker
+
+```kotlin
+mapView.clearPositionMarker()
+```
+
+Clear and remove position marker.
+
+### 5.3.30 getPositionMarker
+
+```kotlin
+mapView.getPositionMarker(
+    completionHandler: (Position?, Error?) -> Any?
+)
+```
+
+- `completionHandler` return the position marker with format {mapId: 4, x: 23.87, y: 10.49}
+
+Retrieve position marker.
 
 
 <div style="page-break-after: always;"></div>
@@ -949,21 +1019,8 @@ data class BGPRegion(
 )
 ```
 
-> **Attention:** 
-
-Before call `startNotifyRegionChanges()` it's necessary to call
-
-```kotlin
-blueGPSAdvertisingService?.startAdv()
-``` 
-
-or
-
-```kotlin
-blueGPSAdvertisingService?.startAdv(androidAdvConfiguration = androidAdvConfiguration!!)
-```
-
-because when advertising service is started a `tagID` is assigned to the app.
+> [!IMPORTANT]
+> Before call `startNotifyRegionChanges()` it's necessary to call `blueGPSAdvertisingService?.startAdv() or `blueGPSAdvertisingService?.startAdv(androidAdvConfiguration = androidAdvConfiguration!!)`because when advertising service is started a `tagID` is assigned to the app.
 
 
 ### 6.2.2 Stop notify region changes
@@ -976,8 +1033,8 @@ BlueGPSLib.instance.stopNotifyRegionChanges()
 
 <br />
 
-> If during the life of the app it's necessary change the configuration it will be enough to re-call `startNotifyRegionChanges(..)`
-because this method stop a previously job active and start the event detection with the new configuration.
+> [!NOTE]
+> If during the life of the app it's necessary change the configuration it will be enough to re-call `startNotifyRegionChanges(..)` because this method stop a previously job active and start the event detection with the new configuration.
 
 <br />
 
@@ -1027,8 +1084,8 @@ BlueGPSLib.instance.stopNotifyPositionChanges()
 
 <br />
 
-> If during the life of the app it's necessary change the configuration it will be enough to re-call `startNotifyPositionChanges(..)`
-because this method stop a previously job active and start the event detection with the new configuration.
+> [!NOTE]
+> If during the life of the app it's necessary change the configuration it will be enough to re-call `startNotifyPositionChanges(..)` because this method stop a previously job active and start the event detection with the new configuration.
 
 <br />
 
@@ -1082,6 +1139,7 @@ BlueGPSLib.instance.stopNotifyEventChanges()
 
 <br />
 
+> [!NOTE]
 > If during the life of the app it's necessary change the configuration it will be enough to re-call `startNotifyEventChanges(..)` because this method stop a previously job active and start the event detection with the new configuration.
 
 <br />
@@ -1613,37 +1671,6 @@ where
 - `tscheduleTypesype` the type of the element to be find the day schedule
 - `date` Example: "2022-01-22"
 
-The resulting **ResponseMessage** contains a `DaySchedule` as follow:
-
-```kotlin
-data class DaySchedule(
-    /**
-     * unique id
-     */
-    val id: String,
-
-    /**
-     * example: 2023-01-21
-     */
-    val date: String,
-
-    /**
-     * example: 08:00
-     */
-    val dayStart: String? = null,
-
-    /**
-     * example: 18:00
-     */
-    val dayEnd: String? = null,
-
-    /**
-     * the list of elements [ScheduleElement]
-     */
-    val scheduleElements: List<ScheduleElement>? = null
-)
-```
-
 ### 11.2 **getAgendaMy** 
 
 `getAgendaMy()` return all agenda for the logged user.
@@ -1659,8 +1686,6 @@ where
 
 - `dateStart` Example : 2022-01-22
 - `dateEnd` Example : 2022-01-22
-
-The resulting **ResponseMessage** contains a `List<DaySchedule>`.
 
 
 ### 11.3 **agendaFind** 
@@ -1793,8 +1818,275 @@ data class ScheduleRequest(
 )
 ```
 
-The resulting **ResponseMessage** contains a `ScheduleRequest`.
+### 11.5 **deleteSchedule** 
 
+Delete a schedule based on the resourceId provided
+
+```kotlin
+suspend fun BlueGPSLib.deleteSchedule(
+    id: String
+): Resource<SyHttpResponse>
+```
+
+### 11.6 **search** 
+
+Search resources based on the given filter
+
+
+```kotlin
+suspend fun search(filter: Filter): Resource<List<Resource>>
+```
+
+where `filter` is struct as follow:
+
+```kotlin
+data class Filter(
+
+    /**
+     * generic search string
+     */
+    val search: String? = null,
+
+    val section: SectionFilterType? = null,
+    /**
+     * Possible resource, all resource in case of empty
+     */
+    val resourceTypes: List<ResourceType>? = null,
+
+    /**
+     * a boolean indicate if is a favourite
+     */
+    val favourite: Boolean? = null,
+
+    /**
+     * a list of [FilterElement]
+     */
+    val filters: List<FilterElement>? = null,
+
+    val filterType: FilterType? = null
+)
+```
+
+Returned resources are struct as follow:
+
+```kotlin
+data class Resource(
+    /**
+     * unique id
+     */
+    val id: String,
+
+    /**
+     * the name of the resource
+     */
+    val name: String,
+
+    /**
+     * the resource type [ResourceType]
+     */
+    val type: ResourceType,
+
+    val singleInfo: InfoIcon? = null,
+
+    val i18n: String? = null,
+
+    val tagid: String? = null,
+
+    /**
+     * image url (if start with http/s the url is absolute, relative otherwise)
+     */
+    val image: String? = null,
+
+    /**
+     * image url (if start with http/s the url is absolute, relative otherwise)
+     */
+    val images: List<String>? = null,
+
+
+    val buildingPosition: BuildingPosition? = null,
+
+    val position: Position? = null,
+
+    val bookingConfig: BookingConfig? = null,
+
+    val services: List<ResourceService>? = null,
+
+    val controls: List<Control>? = null,
+
+    val favourite: Boolean? = false,
+
+    val sensors: List<SensorInfo>? = null,
+
+    val subtype: String? = null,
+
+    val i18nSubtype: String? = null,
+
+    /**
+     * Search tags
+     */
+    val metadataTypes: List<String>? = null,
+
+    /**
+     * Groups
+     */
+    val connectedGroupNames: List<String>? = null,
+
+    val description: String? = null,
+
+    val integrationKey: String? = null,
+
+    val additionalServices: List<AdditionalService>? = null,
+
+    val code: String? = null,
+
+    val codeUrl: String? = null,
+
+    val username: String? = null,
+
+    val imageUrl: String? = null,
+
+    val imagesUrl: List<String>? = null
+
+)
+```
+
+### 11.7 **getFilterSection** 
+
+Return a list of `SectionFilter` based on the provided `SectionFilterType`
+
+```kotlin
+suspend fun getFilterSection(sectionTypes: List<SectionFilterType>? = null): Resource<List<SectionFilter>>
+```
+
+where `SectionFilterType` is:
+
+```kotlin
+enum class SectionFilterType {
+    BOOKING,
+    SEARCH,
+    MAP
+}
+```
+
+return a list of `SectionFilter` as follow:
+
+```kotlin
+data class SectionFilter(
+    val sectionType: SectionFilterType,
+    val sectionValues: List<FilterValueElement>
+)
+```
+
+### 11.8 **getFilterResource** 
+
+Return the corresponding filters into a `Filter` object for the provided type `ResourceType`
+
+```kotlin
+suspend fun getFilterResource(type: ResourceType): Resource<Filter>
+```
+
+where `Filter` is as follow:
+
+```kotlin
+data class Filter(
+
+    /**
+     * generic search string
+     */
+    val search: String? = null,
+
+    val section: SectionFilterType? = null,
+    /**
+     * Possible resource, all resource in case of empty
+     */
+    val resourceTypes: List<ResourceType>? = null,
+
+    /**
+     * a boolean indicate if is a favourite
+     */
+    val favourite: Boolean? = null,
+
+    /**
+     * a list of [FilterElement]
+     */
+    val filters: List<FilterElement>? = null,
+
+    val filterType: FilterType? = null
+)
+```
+
+### 11.9 **getFilter** 
+
+Return the corresponding filters into a `Filter` object for the provided type `FilterType`
+
+```kotlin
+suspend fun getFilter(type: FilterType): Resource<Filter>
+```
+
+where `Filter` is as follow:
+
+```kotlin
+data class Filter(
+
+    /**
+     * generic search string
+     */
+    val search: String? = null,
+
+    val section: SectionFilterType? = null,
+    /**
+     * Possible resource, all resource in case of empty
+     */
+    val resourceTypes: List<ResourceType>? = null,
+
+    /**
+     * a boolean indicate if is a favourite
+     */
+    val favourite: Boolean? = null,
+
+    /**
+     * a list of [FilterElement]
+     */
+    val filters: List<FilterElement>? = null,
+
+    val filterType: FilterType? = null
+)
+```
+
+### 11.10 **getElementResource** 
+
+Get Resource specified by id
+
+```kotlin
+suspend fun BlueGPSLib.getElementResource(id: String): Resource<Resource>
+```
+
+### 11.11 **putFavourite** 
+
+Change favourite resource specified by resource
+
+```kotlin
+suspend fun BlueGPSLib.putFavourite(favouriteResource: FavouriteResource): Resource<SyHttpResponse>
+```
+
+where `favouriteResource` is as follow:
+
+```kotlin
+data class FavouriteResource(
+    val resourceId: String? = null,
+    val favourite: Boolean? = null
+)
+```
+
+the response is `SyHttpResponse` as follow:
+
+```kotlin
+data class SyHttpResponse(
+    val code: Int,
+    val message: String,
+    val trace: String? = null
+)
+```
 
 <div style="page-break-after: always;"></div>
 
