@@ -1,3 +1,10 @@
+> [!CAUTION]
+> Important note.
+
+**This repository is now deprecated and will be removed September 1, 2024. Use the [new repository](https://github.com/synapseslab/android-bluegps-sdk-public) for BlueGPS SDK library and the new [demo app](https://github.com/synapseslab/android-bluegps-demoapp-public) for example reference.**
+
+---
+
 # BlueGPS SDK Examples for Android
 Official Android Demo App showcases the BlueGPS SDK features and acts as reference implementation for many of the basic SDK features.
 Getting started requires you setup a **license**.
